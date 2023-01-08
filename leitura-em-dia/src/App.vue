@@ -7,12 +7,23 @@ import { RouterLink, RouterView } from 'vue-router'
     <img alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="61" />
   </header>
   <aside>
-    <div class="wrapper">
-      <nav>
+    <nav>
+      <div>
+        
+      </div>
+      <span>Usuário</span>
+      <button>
         <RouterLink to="/">Perfil</RouterLink>
+      </button>
+      <button>
         <RouterLink to="/">Seus livros</RouterLink>
+      </button>
+      <button>
         <RouterLink to="/">Estatísticas</RouterLink>
-      </nav>
+      </button>
+    </nav>
+    <div>
+      <img alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
     </div>
   </aside>
 
