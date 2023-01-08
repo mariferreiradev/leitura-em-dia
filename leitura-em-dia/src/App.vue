@@ -4,15 +4,16 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-      </nav>
-    </div>
+    <img alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="61" />
   </header>
   <aside>
-    
+    <div class="wrapper">
+      <nav>
+        <RouterLink to="/">Perfil</RouterLink>
+        <RouterLink to="/">Seus livros</RouterLink>
+        <RouterLink to="/">Estatísticas</RouterLink>
+      </nav>
+    </div>
   </aside>
 
   <RouterView />
