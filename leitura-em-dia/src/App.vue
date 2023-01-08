@@ -4,12 +4,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <img alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="61" />
+    <img alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="70" />
   </header>
+  <RouterView />
   <aside>
     <nav>
       <div>
-        
+
       </div>
       <span>Usuário</span>
       <button>
@@ -26,8 +27,6 @@ import { RouterLink, RouterView } from 'vue-router'
       <img alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
     </div>
   </aside>
-
-  <RouterView />
 </template>
 
 <style scoped>
