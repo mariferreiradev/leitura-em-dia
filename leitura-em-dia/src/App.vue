@@ -31,17 +31,31 @@ import { RouterLink, RouterView } from 'vue-router'
       <img alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
     </div>
   </aside>
+  <footer>
+      <p>Desenvolvido por Mariana Ferreira</p>
+      <div class="contato">
+        <a href="https://github.com/mariferreiradev" target="_blank">
+          <img src="./assets/icon-github.webp" alt="Icone Github" width="40" height="40">
+        </a>
+        <a href="https://www.linkedin.com/in/mariferreiradev/" target="_blank">
+          <img src="./assets/icon-linkedin.webp" alt="Icone Linkedin" width="40" height="40">
+        </a>
+      </div>
+  </footer>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
 }
 
 nav {
@@ -53,30 +67,53 @@ nav {
   text-align: center;
   margin-top: 2rem;
 }
+
 .perfil img {
   border-radius: 100%;
 }
+
 .perfil span {
   font-weight: 700;
   font-size: 20px;
 }
+
 .btn-sidebar {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .btn-perfil {
   font-size: 15px;
   background-color: transparent;
   border: 1px solid #00c2cb;
   border-radius: 7px;
-  padding: 6px 8px;
+  padding: 6px 10px;
 }
+
 .menu{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 25px 0;
+  padding: 40px 0px 25px 0px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer p {
+  font-size: 12px;
+  text-align: center;
+}
+
+.contato {
+  display: flex;
+  gap: 10px;
 }
 nav a.router-link-exact-active {
   color: var(--color-text);
