@@ -1,5 +1,16 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
+<script>
+  import { RouterLink, RouterView } from 'vue-router'
+  export default {
+    data: () => ({
+      sidebarOpen: false,
+    }),
+
+    methods: {
+      toggleSidebar() {
+        this.sidebarOpen = !this.sidebarOpen
+      }
+    }
+  }
 </script>
 
 <template>
@@ -8,7 +19,7 @@ import { RouterLink, RouterView } from 'vue-router'
   </header>
   <RouterView />
   <aside>
-    <nav>
+    <nav :class="{hidden: sidebarOpen}">
       <div class="perfil">
         <div>
           <img src="./assets/profile-img.webp" alt="Foto do usuário" width="80" height="80">
@@ -28,17 +39,17 @@ import { RouterLink, RouterView } from 'vue-router'
       </div>
     </nav>
     <div class="menu">
-      <img alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
+      <img v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
     </div>
   </aside>
   <footer>
       <p>Desenvolvido por Mariana Ferreira</p>
       <div class="contato">
         <a href="https://github.com/mariferreiradev" target="_blank">
-          <img src="./assets/icon-github.webp" alt="Icone Github" width="40" height="40">
+          <img src="./assets/icon-github.webp" alt="Icone Github" width="35" height="35">
         </a>
         <a href="https://www.linkedin.com/in/mariferreiradev/" target="_blank">
-          <img src="./assets/icon-linkedin.webp" alt="Icone Linkedin" width="40" height="40">
+          <img src="./assets/icon-linkedin.webp" alt="Icone Linkedin" width="35" height="35">
         </a>
       </div>
   </footer>
@@ -125,6 +136,10 @@ nav a.router-link-exact-active:hover {
 
 nav a:first-of-type {
   border: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (min-width: 1024px) {
