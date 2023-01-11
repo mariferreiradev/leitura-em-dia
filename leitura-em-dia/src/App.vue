@@ -16,35 +16,37 @@
 </script>
 
 <template>
-  <header :class="{hidden: homePage}">
-    <img alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="70" />
-  </header>
-  <RouterView :class="{hidden: homePage}" />
-  <aside>
-    <nav :class="{hidden: sidebarOpen}">
-      <div class="perfil">
-        <div>
-          <img src="./assets/profile-img.webp" alt="Foto do usuário" width="80" height="80">
+  <div class="conteudo-app">
+    <header>
+      <img alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="70" />
+      <div class="menu">
+          <img v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
         </div>
-        <span>Usuário</span>
-      </div>
-      <div class="btn-sidebar">
-        <button class="btn-perfil">
-          <RouterLink to="/">Perfil</RouterLink>
-        </button>
-        <button class="btn-perfil">
-          <RouterLink to="/">Seus livros</RouterLink>
-        </button>
-        <button class="btn-perfil">
-          <RouterLink to="/">Estatísticas</RouterLink>
-        </button>
-      </div>
-    </nav>
-    <div class="menu">
-      <img v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
-    </div>
-  </aside>
-  <footer :class="{hidden: homePage}">
+    </header>
+    <aside>
+      <nav :class="{hidden: sidebarOpen}">
+        <div class="perfil">
+          <div>
+            <img src="./assets/profile-img.webp" alt="Foto do usuário" width="100" height="100">
+          </div>
+            <span>Usuário</span>
+        </div>
+        <div class="btn-sidebar">
+          <button class="btn-perfil">
+            <RouterLink to="/">Perfil</RouterLink>
+          </button>
+          <button class="btn-perfil">
+            <RouterLink to="/">Seus livros</RouterLink>
+          </button>
+          <button class="btn-perfil">
+            <RouterLink to="/">Estatísticas</RouterLink>
+          </button>
+        </div>
+      </nav>
+    </aside>
+    <RouterView :class="{hidden: homePage}" />
+    <div></div>
+    <footer>
       <p>Desenvolvido por Mariana Ferreira</p>
       <div class="contato">
         <a href="https://github.com/mariferreiradev" target="_blank">
@@ -54,31 +56,45 @@
           <img src="./assets/icon-linkedin.webp" alt="Icone Linkedin" width="35" height="35">
         </a>
       </div>
-  </footer>
+    </footer>
+  </div>
 </template>
 
 <style scoped>
+
+.conteudo-app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 40px;
+  justify-content: space-between;
+  padding: 2rem;
 }
 
 .logo {
   display: block;
 }
 
+aside {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 30px;
   width: 100%;
   text-align: center;
-  margin-top: 2rem;
 }
 
 .perfil img {
@@ -93,7 +109,7 @@ nav {
 .btn-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .btn-perfil {
@@ -108,7 +124,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 40px 0px 25px 0px;
 }
 
 footer {
@@ -117,6 +132,8 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  bottom: 0;
+  padding: 2rem;
 }
 
 footer p {
@@ -128,6 +145,7 @@ footer p {
   display: flex;
   gap: 10px;
 }
+
 nav a.router-link-exact-active {
   color: var(--color-text);
 }
