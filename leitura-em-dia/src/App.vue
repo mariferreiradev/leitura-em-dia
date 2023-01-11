@@ -8,8 +8,8 @@
 
     methods: {
       toggleSidebar() {
-        this.homePage = !this.homePage
         this.sidebarOpen = !this.sidebarOpen
+        this.homePage = !this.homePage
       }
     }
   }
@@ -18,35 +18,37 @@
 <template>
   <div class="conteudo-app">
     <header>
-      <img alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="70" />
+      <img :class="{hidden: homePage}" alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="70" />
       <div class="menu">
-          <img v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
-        </div>
-    </header>
-    <aside>
-      <nav :class="{hidden: sidebarOpen}">
-        <div class="perfil">
-          <div>
-            <img src="./assets/profile-img.webp" alt="Foto do usuário" width="100" height="100">
-          </div>
+        <img :class="{hidden: homePage}" v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
+      </div>
+      <aside :class="{hidden: sidebarOpen}">
+        <nav>
+          <div class="perfil">
+            <div>
+              <img src="./assets/profile-img.webp" alt="Foto do usuário" width="100" height="100">
+            </div>
             <span>Usuário</span>
-        </div>
-        <div class="btn-sidebar">
-          <button class="btn-perfil">
-            <RouterLink to="/">Perfil</RouterLink>
-          </button>
-          <button class="btn-perfil">
-            <RouterLink to="/">Seus livros</RouterLink>
-          </button>
-          <button class="btn-perfil">
-            <RouterLink to="/">Estatísticas</RouterLink>
-          </button>
-        </div>
-      </nav>
-    </aside>
+          </div>
+          <div class="btn-sidebar">
+            <button class="btn-perfil">
+              <RouterLink to="/">Perfil</RouterLink>
+            </button>
+            <button class="btn-perfil">
+              <RouterLink to="/">Seus livros</RouterLink>
+            </button>
+            <button class="btn-perfil">
+              <RouterLink to="/">Estatísticas</RouterLink>
+            </button>
+          </div>
+          <div class="menu">
+            <img v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-aberta.webp" width="50" height="50">
+          </div>
+        </nav>
+      </aside>
+    </header>
     <RouterView :class="{hidden: homePage}" />
-    <div></div>
-    <footer>
+    <footer :class="{hidden: homePage}">
       <p>Desenvolvido por Mariana Ferreira</p>
       <div class="contato">
         <a href="https://github.com/mariferreiradev" target="_blank">
@@ -89,12 +91,15 @@ aside {
 }
 
 nav {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 30px;
   width: 100%;
   text-align: center;
+  padding: 2rem;
 }
 
 .perfil img {
