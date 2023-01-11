@@ -32,13 +32,16 @@
           </div>
           <div class="btn-sidebar">
             <button class="btn-perfil">
-              <RouterLink to="/">Perfil</RouterLink>
+              <RouterLink v-on:click="toggleSidebar()" to="/">Home</RouterLink>
             </button>
             <button class="btn-perfil">
-              <RouterLink to="/">Seus livros</RouterLink>
+              <RouterLink v-on:click="toggleSidebar()" to="/perfil">Perfil</RouterLink>
             </button>
             <button class="btn-perfil">
-              <RouterLink to="/">Estatísticas</RouterLink>
+              <RouterLink to="/seus-livros">Seus livros</RouterLink>
+            </button>
+            <button class="btn-perfil">
+              <RouterLink to="/estatisticas">Estatísticas</RouterLink>
             </button>
           </div>
           <div class="menu">
