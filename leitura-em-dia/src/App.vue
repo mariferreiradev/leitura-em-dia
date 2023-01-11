@@ -2,11 +2,13 @@
   import { RouterLink, RouterView } from 'vue-router'
   export default {
     data: () => ({
-      sidebarOpen: false,
+      sidebarOpen: true,
+      homePage: false,
     }),
 
     methods: {
       toggleSidebar() {
+        this.homePage = !this.homePage
         this.sidebarOpen = !this.sidebarOpen
       }
     }
@@ -14,10 +16,10 @@
 </script>
 
 <template>
-  <header>
+  <header :class="{hidden: homePage}">
     <img alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="70" />
   </header>
-  <RouterView />
+  <RouterView :class="{hidden: homePage}" />
   <aside>
     <nav :class="{hidden: sidebarOpen}">
       <div class="perfil">
@@ -42,7 +44,7 @@
       <img v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
     </div>
   </aside>
-  <footer>
+  <footer :class="{hidden: homePage}">
       <p>Desenvolvido por Mariana Ferreira</p>
       <div class="contato">
         <a href="https://github.com/mariferreiradev" target="_blank">
