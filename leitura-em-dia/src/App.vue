@@ -118,7 +118,7 @@ nav {
   font-size: 15px;
   background-color: transparent;
   border: 1px solid #00c2cb;
-  border-radius: 7px;
+  border-radius: 10px;
   padding: 6px 10px;
 }
 
