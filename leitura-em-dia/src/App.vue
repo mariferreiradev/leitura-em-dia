@@ -31,18 +31,10 @@
             <span>Usuário</span>
           </div>
           <div class="btn-sidebar">
-            <button class="btn-perfil">
-              <RouterLink v-on:click="toggleSidebar()" to="/">Home</RouterLink>
-            </button>
-            <button class="btn-perfil">
-              <RouterLink v-on:click="toggleSidebar()" to="/perfil">Perfil</RouterLink>
-            </button>
-            <button class="btn-perfil">
-              <RouterLink to="/seus-livros">Seus livros</RouterLink>
-            </button>
-            <button class="btn-perfil">
-              <RouterLink to="/estatisticas">Estatísticas</RouterLink>
-            </button>
+            <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/">Home</RouterLink>
+            <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/perfil">Perfil</RouterLink>
+            <RouterLink class="btn-perfil" to="/seus-livros">Seus livros</RouterLink>
+            <RouterLink class="btn-perfil" to="/estatisticas">Estatísticas</RouterLink>
           </div>
           <div class="menu">
             <img v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-aberta.webp" width="50" height="50">
@@ -121,6 +113,8 @@ nav {
 }
 
 .btn-perfil {
+  text-align: center;
+  color: #00c2cb;
   font-size: 15px;
   background-color: transparent;
   border: 1px solid #00c2cb;
@@ -128,6 +122,15 @@ nav {
   padding: 6px 10px;
 }
 
+.btn-perfil:hover {
+  color: #ff4c6d;
+  border: 1px solid #ff4c6d;
+}
+
+.btn-perfil:active {
+  color: #ff4c6d;
+  border: 1px solid #ff4c6d;
+}
 .menu{
   display: flex;
   align-items: center;
@@ -155,15 +158,8 @@ footer p {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a:first-of-type {
-  border: 0;
+  color: #ff4c6d;
+  border: 1px solid #ff4c6d;
 }
 
 .hidden {
