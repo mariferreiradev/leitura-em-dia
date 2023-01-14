@@ -11,6 +11,12 @@
             previewFiles(event) {
                 this.image = URL.createObjectURL(event.target.files[0]);
             }
+        },
+
+        methods: {
+            addName() {
+                this.nome = this.addNome
+            }
         }
     }
 </script>
@@ -29,10 +35,10 @@
             <div class="cadastro">
                 <label for="avatar">Escolha uma foto</label>
                 <input type="file" id="avatar" name="avatar" accept="image/.png, image/.jpeg" @change="previewFiles" />
-                <input name="name" type="text" v-model="addNome" placeholder="Digite seu nome...">
+                <input v-model="addNome" name="name" type="text" placeholder="Digite seu nome...">
             </div>
         </div>
-        <button>Salvar</button>
+        <button v-on:click="addName()">Salvar</button>
     </div>
 </template>
 
