@@ -114,22 +114,24 @@ nav {
 
 .btn-perfil {
   text-align: center;
-  color: #00c2cb;
+  color: #ffff;
   font-size: 15px;
-  background-color: transparent;
+  background-color: #00c2cb;
   border: 1px solid #00c2cb;
-  border-radius: 10px;
-  padding: 6px 10px;
+  border-radius: 25px;
+  padding: 6px 12px;
 }
 
 .btn-perfil:hover {
-  color: #ff4c6d;
+  color: #ffff;
+  background-color: #ff4c6d;
   border: 1px solid #ff4c6d;
 }
 
 .btn-perfil:active {
-  color: #ff4c6d;
+  color: #ffff;
   border: 1px solid #ff4c6d;
+  background-color: #ff4c6d;
 }
 .menu{
   display: flex;
@@ -158,8 +160,9 @@ footer p {
 }
 
 nav a.router-link-exact-active {
-  color: #ff4c6d;
+  color: #ffff;
   border: 1px solid #ff4c6d;
+  background-color: #ff4c6d;
 }
 
 .hidden {
@@ -183,13 +186,5 @@ nav a.router-link-exact-active {
     flex-wrap: wrap;
   }
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
 </style>

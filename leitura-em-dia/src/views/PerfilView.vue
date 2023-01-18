@@ -10,13 +10,13 @@
         methods: {
             previewFiles(event) {
                 this.image = URL.createObjectURL(event.target.files[0]);
-            }
-        },
+            },
 
-        methods: {
             addName() {
                 this.nome = this.addNome
+                this.addNome = ""
             }
+            
         }
     }
 </script>
@@ -24,17 +24,12 @@
 <template>
     <div class="perfil">
         <div class="usuario">
-            <div>
-                <img :src="image" alt="Foto do usuário" width="100" height="100" />
-            </div>
-            <div>
+            <div class="add-foto">
+                <label for="avatar"><img :src="image" alt="Foto do usuário" width="100" height="100" /></label>
+                <input type="file" id="avatar" name="avatar" accept="image/.png, image/.jpeg" @change="previewFiles" />
                 <span>{{nome}}</span>
             </div>
-        </div>
-        <div class="add-usuario">
-            <div class="cadastro">
-                <label for="avatar">Escolha uma foto</label>
-                <input type="file" id="avatar" name="avatar" accept="image/.png, image/.jpeg" @change="previewFiles" />
+            <div>
                 <input v-model="addNome" name="name" type="text" placeholder="Digite seu nome...">
             </div>
         </div>
@@ -58,60 +53,45 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 15px;
+        gap: 25px;
     }
 
-    .usuario img {
-        border-radius: 100%;
-    }
-
-    .usuario span {
-        font-size: 20px;
-        font-weight: 700;
-    }
-
-    .cadastro {
+    .add-foto {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 10px;
     }
 
-    .cadastro label {
+    .add-foto label {
         font-size: 15px;
         background-color: transparent;
         color: #00c2cb;
-        border: 1px solid #00c2cb;
-        border-radius: 10px;
-        padding: 8px 10px;
+        border-radius: 100%;
         cursor: pointer;
     }
 
-    .cadastro label:hover {
-        background-color: #00c2cb;
-        color: #ffff;
-        border: 1px solid #00c2cb;
+    .add-foto img {
+        border-radius: 100%;
     }
 
     input[type="file"]{
         display: none;
     }
 
-    .usuario {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+    .add-foto span {
+        font-size: 20px;
+        font-weight: 700;
     }
 
     input[type="text"] {
         font-size: 15px;
         color: #0f77ff;
         border: 1px solid #00c2cb;
-        border-radius: 10px;
+        border-radius: 25px;
+        padding: 8px 10px;
         outline-color: #00c2cb;
-        padding: 9px 11px;
     }
 
     input[type="text"]:focus {
@@ -124,21 +104,18 @@
 
     button {
         font-size: 15px;
-        background-color: transparent;
-        color: #00c2cb;
+        background-color: #00c2cb;
+        color: #ffff;
         border: 1px solid #00c2cb;
-        border-radius: 10px;
-        padding: 8px 10px;
+        border-radius: 25px;
+        padding: 8px 15px;
         cursor: pointer;
     }
 
     button:hover {
-        background-color: #00c2cb;
+        background-color: #ff4c6d;
+        border: 1px solid #ff4c6d;
         color: #ffff;
-        border: 1px solid #00c2cb;
-        border-radius: 10px;
-        padding: 8px 10px;
-        cursor: pointer;
     }
   
 </style>
