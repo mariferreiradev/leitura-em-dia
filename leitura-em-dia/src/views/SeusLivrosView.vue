@@ -1,15 +1,23 @@
 <template>
     <div class="add-livros">
         <div class="pesquisa">
-            <input type="text" placeholder="Buscar por" />
-            <img src="../../public/img/lupa.webp" alt="Buscar" width="25" height="25">
-            <img src="../../public/img/filtro.webp" alt="Filtrar" width="20" height="20">
+            <div class="buscar">
+                <input type="text" placeholder="Buscar por..." />
+                <img src="../../public/img/lupa.webp" alt="Buscar" width="24" height="24">
+            </div>
+            <img class="filtro" src="../../public/img/filtro.webp" alt="Filtrar" width="24" height="24">
         </div>
         <div class="livros">
             <div class="livro">
-                <p>A bela adormecida</p>
+                <p>Cracking the Coding Interview</p>
                 <div>
-                    <span>Concluído</span>
+                    <span><img src="../../public/img/lendo.png" alt="Lendo" width="25" height="25"></span>
+                </div>
+            </div>
+            <div class="livro">
+                <p>Clean Code</p>
+                <div>
+                    <span><img src="../../public/img/concluido.png" alt="Concluído" width="25" height="25"></span>
                 </div>
             </div>
         </div>
@@ -24,7 +32,7 @@
     .add-livros {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
         padding: 2rem;
     }
 
@@ -32,7 +40,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        gap: 20px;
+    }
+
+    .buscar {
+        position: relative;
+    }
+
+    .buscar img {
+        position: absolute;
+        top: 6px;
+        right: 12px;
+        cursor: pointer;
     }
 
     input[type="text"] {
@@ -49,7 +68,16 @@
         border: 2px solid #00c2cb;
     }
 
+    input[type="text"]::placeholder {
+        color: #00c2cb;
+    }
+
+    .filtro {
+        cursor: pointer;
+    }
+
     .livros {
+        color: #0f77ff;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -63,6 +91,11 @@
         align-items: center;
         width: 100%;
         font-size: 14px;
+    }
+
+    .livro span {
+        color: #ff4c6d;
+        font-weight: 600;
     }
     
     .btn {
