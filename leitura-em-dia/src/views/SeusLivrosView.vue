@@ -35,18 +35,15 @@
         gap: 40px;
         padding: 2rem;
     }
-
     .pesquisa {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 20px;
     }
-
     .buscar {
         position: relative;
     }
-
     .buscar img {
         position: absolute;
         top: 6px;
@@ -71,11 +68,9 @@
     input[type="text"]::placeholder {
         color: #00c2cb;
     }
-
     .filtro {
         cursor: pointer;
     }
-
     .livros {
         color: #0f77ff;
         display: flex;
@@ -84,7 +79,6 @@
         align-items: flex-start;
         gap: 10px;
     }
-
     .livro {
         display: flex;
         justify-content: space-between;
@@ -92,18 +86,15 @@
         width: 100%;
         font-size: 14px;
     }
-
     .livro span {
         color: #ff4c6d;
         font-weight: 600;
     }
-    
     .btn {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-
     .add-livro {
         font-size: 15px;
         background-color: #00c2cb;
@@ -113,7 +104,6 @@
         padding: 8px 10px;
         cursor: pointer;
     }
-
     .add-livro:hover {
         background-color: #ff4c6d;
         border: 1px solid #ff4c6d;
