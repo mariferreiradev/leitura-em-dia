@@ -1,20 +1,16 @@
 <script>
-
+  import { RouterLink } from 'vue-router'
 </script>
 
 <template>
   <main>
     <div class="opcoes">
       <img src="../../public/img/icone-add-pag.webp" alt="Páginas de livro" width="56" height="41">
-      <a href="">
-        <button class="btn-main">Adicionar página</button>
-      </a>
+      <RouterLink class="btn-main" to="/add-paginas">Adicionar página</RouterLink>
     </div>
     <div class="opcoes">
       <img src="../../public/img/icone-concluir-livros.webp" alt="Livro concluído" width="42" height="61">
-      <a href="">
-        <button class="btn-main">Concluir livro</button>
-      </a>
+      <RouterLink class="btn-main" to="/concluir-livros">Concluir livro</RouterLink>
     </div>
   </main>
 </template>
@@ -37,9 +33,6 @@
     gap: 12px;
   }
 
-  .opcoes a {
-    background-color: transparent;
-  }
   .btn-main {
     font-size: 15px;
     color: #ffff;

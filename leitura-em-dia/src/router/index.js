@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import PerfilView from '../views/PerfilView.vue'
 import SeusLivrosView from '../views/SeusLivrosView.vue'
 import EstatisticasView from '../views/EstatisticasView.vue'
+import AddPaginasView from '../views/AddPaginasView.vue'
+import ConcluirLivrosView from '../views/ConcluirLivrosView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +31,18 @@ const router = createRouter({
       path:'/estatisticas',
       name: 'estatisticas',
       component: EstatisticasView
+    },
+
+    {
+      path:'/add-paginas',
+      name: 'add-paginas',
+      component: AddPaginasView
+    },
+
+    {
+      path:'/concluir-livros',
+      name: 'concluir-livros',
+      component: ConcluirLivrosView
     }
   ]
 })
