@@ -1,5 +1,5 @@
 <template>
-    <div class="add-livros">
+    <div class="seus-livros">
         <h1>Livros</h1>
         <div class="pesquisa">
             <div class="buscar">
@@ -23,7 +23,21 @@
             </div>
         </div>
         <div class="btn">
-            <button class="add-livro">Adicionar livro</button>
+            <button class="btn-add">Adicionar livro</button>
+        </div>
+    </div>
+    <div class="add-livros">
+        <div class="livro">
+            <label for="">Nome:</label>
+            <input type="text" placeholder="Digite o nome do livro...">
+        </div>
+        <div class="autor">
+            <label for="">Autor:</label>
+            <input type="text" placeholder="Digite o nome do autor...">
+        </div>
+        <div class="paginas">
+            <label for="">Número de páginas</label>
+            <input type="number" placeholder="Digite o número de páginas...">
         </div>
     </div>
 </template>
@@ -35,7 +49,7 @@
         text-align: center;
         margin-bottom: 15px;
     }
-    .add-livros {
+    .seus-livros {
         display: flex;
         flex-direction: column;
         gap: 40px;
@@ -101,7 +115,7 @@
         align-items: center;
         justify-content: center;
     }
-    .add-livro {
+    .btn-add {
         font-size: 15px;
         background-color: #00c2cb;
         color: #ffff;
@@ -110,7 +124,7 @@
         padding: 8px 10px;
         cursor: pointer;
     }
-    .add-livro:hover {
+    .btn-add:hover {
         background-color: #ff4c6d;
         border: 1px solid #ff4c6d;
         transition: 0.4s;
