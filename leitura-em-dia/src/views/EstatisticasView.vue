@@ -66,6 +66,12 @@
         gap: 30px;
         padding: 2rem;
     }
+
+    h1 {
+        font-size: 30px;
+        color: #ff4c6d;
+        text-align: center;
+    }
     .periodo {
         display: flex;
         flex-direction: column;

@@ -1,5 +1,6 @@
 <template>
     <div class="add-livros">
+        <h1>Livros</h1>
         <div class="pesquisa">
             <div class="buscar">
                 <input type="text" placeholder="Buscar por..." />
@@ -28,7 +29,12 @@
 </template>
 
 <style scoped>
-
+    h1 {
+        font-size: 30px;
+        color: #ff4c6d;
+        text-align: center;
+        margin-bottom: 15px;
+    }
     .add-livros {
         display: flex;
         flex-direction: column;

@@ -1,6 +1,6 @@
 <template>
     <div class="add-page">
-        <h1>Concluir livro</h1>
+        <h1>Adicionar Páginas</h1>
         <div class="livros">
             <label for="">Escolha o livro:</label>
             <select name="" id="">
@@ -32,6 +32,12 @@
         padding: 2rem;
     }
 
+    h1 {
+        color: #ff4c6d;
+        text-align: center;
+        font-size: 30px;
+    }
+
     .livros, .paginas, .tempo {
         font-size: 15px;
         display: flex;
@@ -48,28 +54,28 @@
         width: 150px;
         font-size: 15px;
         color: #0f77ff;
-        border: 1px solid #00c2cb;
+        border: 1px solid #ff4c6d;
         border-radius: 25px;
         padding: 8px 10px;
-        outline-color: #00c2cb;
+        outline-color: #ff4c6d;
     }
 
     .livros select:focus {
-        border: 2px solid #00c2cb;
+        border: 2px solid #ff4c6d;
     }
 
     input[type="number"] {
         width: 150px;
         font-size: 15px;
         color: #0f77ff;
-        border: 1px solid #00c2cb;
+        border: 1px solid #ff4c6d;
         border-radius: 25px;
         padding: 8px 10px;
-        outline-color: #00c2cb;
+        outline-color: #ff4c6d;
     }
 
     input[type="number"]:focus {
-        border: 2px solid #00c2cb;
+        border: 2px solid #ff4c6d;
     }
 
     input[type="number"]::-webkit-outer-spin-button,
@@ -82,20 +88,20 @@
         width: 150px;
         font-size: 15px;
         color: #0f77ff;
-        border: 1px solid #00c2cb;
+        border: 1px solid #ff4c6d;
         border-radius: 25px;
         padding: 8px 10px;
-        outline-color: #00c2cb;
+        outline-color: #ff4c6d;
     }
 
     input[type="time"]:focus {
-        border: 2px solid #00c2cb;
+        border: 2px solid #ff4c6d;
     }
 
     input[type="time"]::-webkit-calendar-picker-indicator {
         cursor: pointer;
         filter: invert(100%);
-        background-color: #c21212;
+        background-color: #00B493;
         border-radius: 100%;
     }
 
