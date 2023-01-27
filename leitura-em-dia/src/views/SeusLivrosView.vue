@@ -27,17 +27,21 @@
         </div>
     </div>
     <div class="add-livros">
-        <div class="livro">
-            <label for="">Nome:</label>
-            <input type="text" placeholder="Digite o nome do livro...">
+        <h1>Adicionar livros</h1>
+        <div class="nome-livro">
+            <label for="">Digite o nome do livro:</label>
+            <input type="text">
         </div>
-        <div class="autor">
-            <label for="">Autor:</label>
-            <input type="text" placeholder="Digite o nome do autor...">
+        <div class="nome-autor">
+            <label for="">Digite o nome do autor:</label>
+            <input type="text">
         </div>
-        <div class="paginas">
-            <label for="">Número de páginas</label>
-            <input type="number" placeholder="Digite o número de páginas...">
+        <div class="n-paginas">
+            <label for="">Digite o número de páginas:</label>
+            <input type="number">
+        </div>
+        <div class="btn">
+            <button class="btn-add">Adicionar</button>
         </div>
     </div>
 </template>
@@ -105,6 +109,7 @@
         align-items: center;
         width: 100%;
         font-size: 14px;
+        cursor: pointer;
     }
     .livro span {
         color: #ff4c6d;
@@ -128,6 +133,53 @@
         background-color: #ff4c6d;
         border: 1px solid #ff4c6d;
         transition: 0.4s;
+    }
+
+    .add-livros {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .nome-livro, .nome-autor, .n-paginas {
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nome-livro input, .nome-autor input{
+        width: 150px;
+        font-size: 15px;
+        color: #0f77ff;
+        border: 1px solid #ff4c6d;
+        border-radius: 25px;
+        padding: 8px 10px;
+        outline-color: #ff4c6d;
+    }
+
+    input[type="number"] {
+        width: 150px;
+        font-size: 15px;
+        color: #0f77ff;
+        border: 1px solid #ff4c6d;
+        border-radius: 25px;
+        padding: 8px 10px;
+        outline-color: #ff4c6d;
+    }
+
+    input[type="number"]:focus {
+        border: 2px solid #ff4c6d;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
     }
 
 </style>
