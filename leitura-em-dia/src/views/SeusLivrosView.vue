@@ -43,6 +43,29 @@
         <div class="btn">
             <button class="btn-add">Adicionar</button>
         </div>
+        <div class="concluidos">
+            <h1>Um Livro</h1>
+            <div>
+                <span>Augusto Cury</span>
+                <p><span>126</span> páginas</p>
+            </div>
+            <div>
+                <div>
+                    <img src="" alt="Ícone relógio">
+                    <p><span>01 dia</span></p>
+                </div>
+                <div>
+                    <img src="" alt="Ícone estrela">
+                    <span>4.8</span>
+                </div>
+            </div>
+            <div>
+                <h3>Resenha:</h3>
+                <div>
+                    <p>Resenha do livro...</p>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
