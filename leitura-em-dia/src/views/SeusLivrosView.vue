@@ -43,27 +43,33 @@
         <div class="btn">
             <button class="btn-add">Adicionar</button>
         </div>
-        <div class="concluidos">
-            <h1>Um Livro</h1>
-            <div>
+    </div>
+    <div class="concluidos">
+        <h1>A Cabana</h1>
+        <div class="dados">
+            <div class="bloco">
+                <img src="..//../public/img/autores.webp" alt="Autor" width="35" height="35">
                 <span>Augusto Cury</span>
-                <p><span>126</span> páginas</p>
             </div>
-            <div>
-                <div>
-                    <img src="" alt="Ícone relógio">
-                    <p><span>01 dia</span></p>
-                </div>
-                <div>
-                    <img src="" alt="Ícone estrela">
-                    <span>4.8</span>
-                </div>
+            <div class="bloco">
+                <img src="..//../public/img/paginas-lidas.webp" alt="Páginas" width="35" height="35">
+                <span>126 páginas</span>
             </div>
+        </div>
+        <div class="dados">
+            <div class="bloco">
+                <img src="..//../public/img/tempo.webp" alt="Tempo de leitura" width="35" height="35">
+                <span>Leitura em 01 dia</span>
+            </div>
+            <div class="bloco">
+                <img src="..//../public/img/estrela-nota.webp" alt="Nota" width="36" height="36">
+                <span>Avaliação 4.8</span>
+            </div>
+        </div>
+        <div class="resenha">
+            <h3>Resenha:</h3>
             <div>
-                <h3>Resenha:</h3>
-                <div>
-                    <p>Resenha do livro...</p>
-                </div>
+                <p>Resenha do livro...</p>
             </div>
         </div>
     </div>
@@ -158,7 +164,9 @@
         transition: 0.4s;
     }
 
+
     .add-livros {
+        padding: 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -205,4 +213,45 @@
         margin: 0;
     }
 
+    .concluidos {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .dados {
+        text-align: center;
+        font-size: 15px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .bloco {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #00c2cb;
+        width: 100px;
+        gap: 8px;
+    }
+
+    .resenha {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    h3 {
+        color: #ff4c6d;
+    }
 </style>
