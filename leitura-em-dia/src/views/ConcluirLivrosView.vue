@@ -12,6 +12,31 @@
             <button class="btn-concluir">Concluir</button>
         </div>
     </div>
+    <div class="avaliar">
+        <div class="avaliação">
+            <p>Deseja avaliar esse livro?</p>
+            <div class="btn-avaliar">
+                <button>Sim</button>
+                <button>Não</button>
+            </div>
+            <div class="nota">
+                <label>Digite sua nota:</label>
+                <input type="number">
+                <button class="btn-salvar">Salvar</button>
+            </div>
+        </div>
+        <div class="resenha">
+            <p>Deseja escrever uma resenha sobre o livro?</p>
+            <div class="btn-escrever">
+                <button>Sim</button>
+                <button>Não</button>
+            </div>
+            <div>
+                <input type="text" placeholder="Escreva sua resenha...">
+                <button class="btn-salvar">Salvar</button>
+            </div>
+        </div>
+    </div>
 </template>
 
 <style scoped>
