@@ -1,5 +1,27 @@
+<script>
+    export default {
+        data: () => ({
+            addLivros: true,
+            concluidos: true,
+            seusLivrosOpen: false,
+        }),
+
+        methods: {
+            toggleAddLivros() {
+                this.seusLivrosOpen = !this.seusLivrosOpen
+                this.addLivros = !this.addLivros
+            },
+
+            toggleConcluidos() {
+                this.seusLivrosOpen = !this.seusLivrosOpen
+                this.concluidos = !this.concluidos
+            }
+        },
+    }
+</script>
+
 <template>
-    <div class="seus-livros">
+    <div class="seus-livros" :class="{hidden: seusLivrosOpen}">
         <h1>Livros</h1>
         <div class="pesquisa">
             <div class="buscar">
@@ -9,13 +31,13 @@
             <img class="filtro" src="../../public/img/filtro.webp" alt="Filtrar" width="24" height="24">
         </div>
         <div class="livros">
-            <div class="livro">
+            <div class="livro" v-on:click="toggleConcluidos()">
                 <p>Cracking the Coding Interview</p>
                 <div>
                     <span><img src="../../public/img/lendo.png" alt="Lendo" width="25" height="25"></span>
                 </div>
             </div>
-            <div class="livro">
+            <div class="livro" v-on:click="toggleConcluidos()">
                 <p>Clean Code</p>
                 <div>
                     <span><img src="../../public/img/concluido.png" alt="Concluído" width="25" height="25"></span>
@@ -23,10 +45,10 @@
             </div>
         </div>
         <div class="btn">
-            <button class="btn-add">Adicionar livro</button>
+            <button class="btn-add" v-on:click="toggleAddLivros()">Adicionar livro</button>
         </div>
     </div>
-    <div class="add-livros">
+    <div class="add-livros" :class="{hidden: addLivros}">
         <h1>Adicionar livros</h1>
         <div class="nome-livro">
             <label for="">Digite o nome do livro:</label>
@@ -41,10 +63,10 @@
             <input type="number">
         </div>
         <div class="btn">
-            <button class="btn-add">Adicionar</button>
+            <button class="btn-add" v-on:click="toggleAddLivros()">Adicionar</button>
         </div>
     </div>
-    <div class="concluidos">
+    <div class="concluidos" :class="{hidden: concluidos}">
         <h1>A Cabana</h1>
         <div class="dados">
             <div class="bloco">
@@ -253,5 +275,9 @@
 
     h3 {
         color: #ff4c6d;
+    }
+
+    .hidden {
+        display: none;
     }
 </style>

@@ -33,8 +33,8 @@
           <div class="btn-sidebar">
             <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/">Home</RouterLink>
             <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/perfil">Perfil</RouterLink>
-            <RouterLink class="btn-perfil" to="/seus-livros">Seus livros</RouterLink>
-            <RouterLink class="btn-perfil" to="/estatisticas">Estatísticas</RouterLink>
+            <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/seus-livros">Seus livros</RouterLink>
+            <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/estatisticas">Estatísticas</RouterLink>
           </div>
           <div class="menu">
             <img v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-aberta.webp" width="50" height="50">
