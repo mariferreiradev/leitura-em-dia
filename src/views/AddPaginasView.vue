@@ -1,21 +1,19 @@
 <script>
     export default {
         data: () => ({
-            btnToSave: 'button',
-            btnGoBack: 'button',
             alert: true
         }),
 
         methods: {
-            goBackToHome() {
-
-            },
-
             saveAlert() {
                 this.alert = !this.alert
                 setTimeout(() => this.alert = true, 2000);
+            },
+
+            goBacktoHome() {
+            this.$router.push('/');
             }
-        }
+        },
     }
 </script>
 
@@ -40,8 +38,8 @@
         </div>
         <div>
             <div class="btn">
-                <button class="btn-go-back" :class="btnGoBack" v-on:click="goBackToHome()">Voltar</button>
-                <button class="btn-to-save" :class="btnToSave" v-on:click="saveAlert()">Salvar</button>
+                <button class="btn-go-back" v-on:click="goBacktoHome()">Voltar</button>
+                <button class="btn-to-save" v-on:click="saveAlert()">Salvar</button>
             </div>
             <span :class= "{hidden: alert}">Suas páginas foram salvas!</span>
         </div>

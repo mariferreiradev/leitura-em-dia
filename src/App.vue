@@ -16,7 +16,7 @@
 </script>
 
 <template>
-  <div class="conteudo-app">
+  <div class="content-app">
     <header>
       <img :class="{hidden: homePage}" alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="75" />
       <div class="menu">
@@ -24,7 +24,7 @@
       </div>
       <aside :class="{hidden: sidebarOpen}">
         <nav>
-          <div class="perfil">
+          <div class="profile">
             <div>
               <img src="./assets/profile-img.webp" alt="Foto do usuário" width="100" height="100">
             </div>
@@ -59,7 +59,7 @@
 
 <style scoped>
 
-.conteudo-app {
+.content-app {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -97,11 +97,11 @@ nav {
   padding: 2rem;
 }
 
-.perfil img {
+.profile img {
   border-radius: 100%;
 }
 
-.perfil span {
+.profile span {
   font-weight: 700;
   font-size: 20px;
 }
