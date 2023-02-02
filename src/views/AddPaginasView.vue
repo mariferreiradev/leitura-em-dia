@@ -17,7 +17,10 @@
             <label for="">Tempo de leitura:</label>
             <input type="time" />
         </div>
-        <button>Salvar</button>
+        <div class="btn">
+            <button>Voltar</button>
+            <button>Salvar</button>
+        </div>
     </div>
 </template>
 
@@ -105,7 +108,15 @@
         border-radius: 100%;
     }
 
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
     button {
+        width: 70px;
         font-size: 15px;
         color: #ffff;
         background-color: #00c2cb;

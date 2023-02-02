@@ -63,7 +63,8 @@
             <input type="number">
         </div>
         <div class="btn">
-            <button class="btn-add" v-on:click="toggleAddLivros()">Adicionar</button>
+            <button class="btn-primary btn-add" v-on:click="toggleAddLivros()">Voltar</button>
+            <button class="btn-primary btn-add" v-on:click="toggleAddLivros()">Salvar</button>
         </div>
     </div>
     <div class="concluidos" :class="{hidden: concluidos}">
@@ -93,6 +94,9 @@
             <div>
                 <p>Resenha do livro...</p>
             </div>
+        </div>
+        <div class="btn">
+            <button class="btn-primary btn-add" v-on:click="toggleConcluidos()">Voltar</button>
         </div>
     </div>
 </template>
@@ -170,6 +174,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 20px;
+    }
+
+    .btn-primary {
+        width: 70px;
     }
     .btn-add {
         font-size: 15px;
