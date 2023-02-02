@@ -1,47 +1,47 @@
 <template>
-    <div class="livros-concluidos">
+    <div class="finished-books">
         <h1>Concluir Livros</h1>
-        <div class="livros">
+        <div class="books">
             <span>Logica de programação</span>
             <p>Pág: <span>33</span> / <span>105</span></p>
-            <button class="btn-concluir">Concluir</button>
+            <button class="btn-finish">Concluir</button>
         </div>
-        <div class="livros">
+        <div class="books">
             <span>Logica de programação</span>
             <p>Pág: <span>33</span> / <span>105</span></p>
-            <button class="btn-concluir">Concluir</button>
+            <button class="btn-finish">Concluir</button>
         </div>
     </div>
-    <div class="avaliar">
-        <div class="avaliacao">
+    <div class="evaluate">
+        <div class="evaluation">
             <p>Deseja avaliar esse livro?</p>
-            <div class="btn-escolher">
+            <div class="btn-choose">
                 <button>Sim</button>
                 <button>Não</button>
             </div>
-            <div class="nota">
+            <div class="grade">
                 <label>Nota de 1.0 a 5.0:</label>
                 <input type="number" placeholder="Digite sua nota...">
-                <button class="btn-salvar">Salvar</button>
+                <button class="btn-save">Salvar</button>
             </div>
         </div>
-        <div class="add-resenha">
+        <div class="add-review">
             <p>Deseja escrever uma resenha sobre o livro?</p>
-            <div class="btn-escolher">
+            <div class="btn-choose">
                 <button>Sim</button>
                 <button>Não</button>
             </div>
-            <div class="resenha">
+            <div class="review">
                 <label for="">Escreva uma resenha breve de até 800 caracteres:</label>
                 <textarea name="" id="" rows="10" maxlength="800" placeholder="Escreva sua resenha..."></textarea>
-                <button class="btn-salvar">Salvar</button>
+                <button class="btn-save">Salvar</button>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-    .livros-concluidos{
+    .finished-books{
         padding: 2rem;
         display: flex;
         flex-direction: column;
@@ -60,7 +60,7 @@
         color: #ff4c6d;
     }
 
-    .livros{
+    .books{
         font-size: 15px;
         display: flex;
         flex-direction: column;
@@ -72,7 +72,7 @@
         padding: 20px;
     }
 
-    .btn-concluir, .btn-salvar, .btn-escolher button {
+    .btn-finish, .btn-save, .btn-choose button {
         font-size: 15px;
         color: #ffff;
         background-color: #00c2cb;
@@ -82,7 +82,7 @@
         cursor: pointer;
   }
 
-    .btn-concluir:hover, .btn-salvar:hover , .btn-escolher button:hover {
+    .btn-finish:hover, .btn-save:hover , .btn-choose button:hover {
         color: #ffff;
         border: 1px solid #ff4c6d;
         background-color: #ff4c6d;
@@ -90,7 +90,7 @@
         transition: 0.4s;
 }
 
-    .avaliar {
+    .evaluate {
         font-size: 15px;
         display: flex;
         flex-direction: column;
@@ -100,7 +100,7 @@
         padding: 2rem;
     }
 
-    .avaliacao, .add-resenha {
+    .evaluation, .add-review {
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -109,14 +109,14 @@
         gap: 15px;
     }
 
-    .btn-escolher {
+    .btn-choose {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 15px;
     }
 
-    .nota, .resenha {
+    .grade, .review {
         color: #ff4c6d;
         text-align: center;
         display: flex;
