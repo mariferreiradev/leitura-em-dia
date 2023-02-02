@@ -5,16 +5,19 @@
             addEvaluation: true,
             addGrade: true,
             addReview: true,
-            writeReview: true
+            review: true
         }),
 
         methods: {
             concludeBook() {
-                this.completedBooks = !this.completedBooks
-                this.addEvaluation = !this.addEvaluation
+                this.completedBooks = true
+                this.addEvaluation = false
+                this.addGrade = true
+                this.addReview = true
+                this.review = true
             },
 
-            evaluationBook() {
+            toggleEvaluationBook() {
                 this.addEvaluation = !this.addEvaluation
                 this.addGrade = !this.addGrade
             },
@@ -22,7 +25,24 @@
             backToCompletedBooks() {
                 this.completedBooks = false
                 this.addEvaluation = true
-                this.addGrade= true
+                this.addGrade = true
+                this.addReview = true
+                this.review = true
+            },
+
+            saveEvaluation() {
+                this.addGrade = !this.addGrade
+                this.addReview = !this.addReview
+            },
+
+            toggleWriteReview() {
+                this.addReview = !this.addReview
+                this.review = !this.review
+            },
+
+            saveReview() {
+                this.completedBooks = !this.completedBooks
+                this.review = !this.review
             }
         }
     }
@@ -47,26 +67,28 @@
             <div class="add-evaluation" :class="{hidden: addEvaluation}">
                 <p>Deseja avaliar esse livro?</p>
                 <div class="btn-choose">
-                    <button v-on:click="evaluationBook()">Sim</button>
+                    <button v-on:click="toggleEvaluationBook()">Sim</button>
                     <button v-on:click="backToCompletedBooks()">Não</button>
                 </div>
             </div>
             <div class="grade" :class="{hidden: addGrade}">
                 <label>Nota de 1.0 a 5.0:</label>
                 <input type="number" placeholder="Digite sua nota...">
-                <button class="btn-save">Salvar</button>
+                <button class="btn-save" v-on:click="saveEvaluation()">Salvar</button>
             </div>
         </div>
-        <div class="add-review" :class="{hidden: addReview}">
-            <p>Deseja escrever uma resenha sobre o livro?</p>
-            <div class="btn-choose">
-                <button>Sim</button>
-                <button>Não</button>
+        <div class="review">
+            <div class="add-review"  :class="{hidden: addReview}">
+                <p>Deseja escrever uma resenha sobre o livro?</p>
+                <div class="btn-choose">
+                    <button v-on:click="toggleWriteReview()">Sim</button>
+                    <button v-on:click="backToCompletedBooks()">Não</button>
+                </div>
             </div>
-            <div class="review" :class="{hidden: writeReview}">
+            <div class="write-review" :class="{hidden: review}">
                 <label for="">Escreva uma resenha breve de até 800 caracteres:</label>
                 <textarea name="" id="" rows="10" maxlength="800" placeholder="Escreva sua resenha..."></textarea>
-                <button class="btn-save">Salvar</button>
+                <button class="btn-save" v-on:click="saveReview()">Salvar</button>
             </div>
         </div>
     </div>
@@ -105,6 +127,7 @@
     }
 
     .btn-finish, .btn-save, .btn-choose button {
+        width: 92px;
         font-size: 15px;
         color: #ffff;
         background-color: #00c2cb;
@@ -112,7 +135,7 @@
         border-radius: 25px;
         padding: 6px 12px;
         cursor: pointer;
-  }
+    }
 
     .btn-finish:hover, .btn-save:hover , .btn-choose button:hover {
         color: #ffff;
@@ -120,8 +143,18 @@
         background-color: #ff4c6d;
         border-radius: 25px;
         transition: 0.4s;
-}
+    }
 
+    .btn-choose {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .btn-choose button {
+        width: 70px;
+    }
     .evaluate {
         font-size: 15px;
         display: flex;
@@ -132,7 +165,7 @@
         padding: 2rem;
     }
 
-    .evaluation, .add-review {
+    .evaluation, .review {
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -141,21 +174,15 @@
         gap: 15px;
     }
 
-    .add-evaluation {
+    .add-evaluation, .add-review {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 15px;
     }
-    .btn-choose {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-    }
 
-    .grade, .review {
+    .grade, .write-review {
         color: #ff4c6d;
         text-align: center;
         display: flex;
