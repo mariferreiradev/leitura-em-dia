@@ -1,7 +1,28 @@
+<script>
+    export default {
+        data: () => ({
+            btnToSave: 'button',
+            btnGoBack: 'button',
+            alert: true
+        }),
+
+        methods: {
+            goBackToHome() {
+
+            },
+
+            saveAlert() {
+                this.alert = !this.alert
+                setTimeout(() => this.alert = true, 2000);
+            }
+        }
+    }
+</script>
+
 <template>
     <div class="add-page">
         <h1>Adicionar Páginas</h1>
-        <div class="livros">
+        <div class="books">
             <label for="">Escolha o livro:</label>
             <select name="" id="">
                 <option value="">Selecione</option>
@@ -9,17 +30,20 @@
                 <option value="">Livro 02</option>
             </select>
         </div>
-        <div class="paginas">
+        <div class="pages">
             <label for="">Quantidade de páginas lidas:</label>
             <input type="number" />
         </div>
-        <div class="tempo">
+        <div class="time">
             <label for="">Tempo de leitura:</label>
             <input type="time" />
         </div>
-        <div class="btn">
-            <button>Voltar</button>
-            <button>Salvar</button>
+        <div>
+            <div class="btn">
+                <button class="btn-go-back" :class="btnGoBack" v-on:click="goBackToHome()">Voltar</button>
+                <button class="btn-to-save" :class="btnToSave" v-on:click="saveAlert()">Salvar</button>
+            </div>
+            <span :class= "{hidden: alert}">Suas páginas foram salvas!</span>
         </div>
     </div>
 </template>
@@ -41,7 +65,7 @@
         font-size: 30px;
     }
 
-    .livros, .paginas, .tempo {
+    .books, .pages, .time {
         font-size: 15px;
         display: flex;
         flex-direction: column;
@@ -51,7 +75,7 @@
         width: 100%;
     }
 
-    .livros select {
+    .books select {
         text-align: center;
         -webkit-appearance: none;
         width: 150px;
@@ -63,7 +87,7 @@
         outline-color: #ff4c6d;
     }
 
-    .livros select:focus {
+    .books select:focus {
         border: 2px solid #ff4c6d;
     }
 
@@ -115,7 +139,7 @@
         gap: 20px;
     }
 
-    button {
+    .btn-to-save, .btn-go-back {
         width: 70px;
         font-size: 15px;
         color: #ffff;
@@ -126,11 +150,24 @@
         cursor: pointer;
     }
 
-    button:hover {
+    .btn-to-save:hover, .btn-go-back:hover {
         color: #ffff;
         border: 1px solid #ff4c6d;
         background-color: #ff4c6d;
         border-radius: 25px;
         transition: 0.4s;
+    }
+
+    span {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #ff4c6d;
+    }
+
+    .hidden {
+        display: none;
     }
 </style>
