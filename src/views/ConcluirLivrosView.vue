@@ -1,6 +1,7 @@
 <script>
     export default {
         data: () => ({
+            completedBooks: false,
             addEvaluation: true,
             addGrade: true,
             addReview: true,
@@ -8,31 +9,47 @@
         }),
 
         methods: {
+            concludeBook() {
+                this.completedBooks = !this.completedBooks
+                this.addEvaluation = !this.addEvaluation
+            },
 
+            evaluationBook() {
+                this.addEvaluation = !this.addEvaluation
+                this.addGrade = !this.addGrade
+            },
+
+            backToCompletedBooks() {
+                this.completedBooks = false
+                this.addEvaluation = true
+                this.addGrade= true
+            }
         }
     }
 </script>
 
 <template>
-    <div class="finished-books">
+    <div class="completed-books" :class="{hidden: completedBooks}">
         <h1>Concluir Livros</h1>
         <div class="books">
             <span>Logica de programação</span>
             <p>Pág: <span>33</span> / <span>105</span></p>
-            <button class="btn-finish">Concluir</button>
+            <button class="btn-finish" v-on:click="concludeBook()">Concluir</button>
         </div>
         <div class="books">
             <span>Logica de programação</span>
             <p>Pág: <span>33</span> / <span>105</span></p>
-            <button class="btn-finish">Concluir</button>
+            <button class="btn-finish" v-on:click="concludeBook()">Concluir</button>
         </div>
     </div>
     <div class="evaluate">
-        <div class="evaluation" :class="{hidden: addEvaluation}">
-            <p>Deseja avaliar esse livro?</p>
-            <div class="btn-choose">
-                <button>Sim</button>
-                <button>Não</button>
+        <div class="evaluation">
+            <div class="add-evaluation" :class="{hidden: addEvaluation}">
+                <p>Deseja avaliar esse livro?</p>
+                <div class="btn-choose">
+                    <button v-on:click="evaluationBook()">Sim</button>
+                    <button v-on:click="backToCompletedBooks()">Não</button>
+                </div>
             </div>
             <div class="grade" :class="{hidden: addGrade}">
                 <label>Nota de 1.0 a 5.0:</label>
@@ -56,7 +73,7 @@
 </template>
 
 <style scoped>
-    .finished-books{
+    .completed-books{
         padding: 2rem;
         display: flex;
         flex-direction: column;
@@ -124,6 +141,13 @@
         gap: 15px;
     }
 
+    .add-evaluation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
     .btn-choose {
         display: flex;
         justify-content: center;
