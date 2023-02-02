@@ -1,3 +1,18 @@
+<script>
+    export default {
+        data: () => ({
+            addEvaluation: true,
+            addGrade: true,
+            addReview: true,
+            writeReview: true
+        }),
+
+        methods: {
+
+        }
+    }
+</script>
+
 <template>
     <div class="finished-books">
         <h1>Concluir Livros</h1>
@@ -13,25 +28,25 @@
         </div>
     </div>
     <div class="evaluate">
-        <div class="evaluation">
+        <div class="evaluation" :class="{hidden: addEvaluation}">
             <p>Deseja avaliar esse livro?</p>
             <div class="btn-choose">
                 <button>Sim</button>
                 <button>Não</button>
             </div>
-            <div class="grade">
+            <div class="grade" :class="{hidden: addGrade}">
                 <label>Nota de 1.0 a 5.0:</label>
                 <input type="number" placeholder="Digite sua nota...">
                 <button class="btn-save">Salvar</button>
             </div>
         </div>
-        <div class="add-review">
+        <div class="add-review" :class="{hidden: addReview}">
             <p>Deseja escrever uma resenha sobre o livro?</p>
             <div class="btn-choose">
                 <button>Sim</button>
                 <button>Não</button>
             </div>
-            <div class="review">
+            <div class="review" :class="{hidden: writeReview}">
                 <label for="">Escreva uma resenha breve de até 800 caracteres:</label>
                 <textarea name="" id="" rows="10" maxlength="800" placeholder="Escreva sua resenha..."></textarea>
                 <button class="btn-save">Salvar</button>
@@ -192,6 +207,10 @@
         background-color: #00c2cb;
         border: 3px solid #e2f5f6;
         -webkit-border-radius: 25px;
+    }
+
+    .hidden {
+        display: none;
     }
 
 </style>
