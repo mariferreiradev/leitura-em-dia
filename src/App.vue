@@ -30,11 +30,11 @@
             </div>
             <span>Usuário</span>
           </div>
-          <div class="btn-sidebar">
-            <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/">Home</RouterLink>
-            <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/perfil">Perfil</RouterLink>
-            <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/seus-livros">Seus livros</RouterLink>
-            <RouterLink class="btn-perfil" v-on:click="toggleSidebar()" to="/estatisticas">Estatísticas</RouterLink>
+          <div class="sidebar">
+            <RouterLink class="btn-sidebar" v-on:click="toggleSidebar()" to="/">Home</RouterLink>
+            <RouterLink class="btn-sidebar" v-on:click="toggleSidebar()" to="/perfil">Perfil</RouterLink>
+            <RouterLink class="btn-sidebar" v-on:click="toggleSidebar()" to="/seus-livros">Seus livros</RouterLink>
+            <RouterLink class="btn-sidebar" v-on:click="toggleSidebar()" to="/estatisticas">Estatísticas</RouterLink>
           </div>
           <div class="menu">
             <img v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-aberta.webp" width="50" height="50">
@@ -45,7 +45,7 @@
     <RouterView :class="{hidden: homePage}" />
     <footer :class="{hidden: homePage}">
       <p>Desenvolvido por Mariana Ferreira</p>
-      <div class="contato">
+      <div class="contact">
         <a href="https://github.com/mariferreiradev" target="_blank">
           <img src="./assets/icon-github.webp" alt="Icone Github" width="35" height="35">
         </a>
@@ -106,13 +106,13 @@ nav {
   font-size: 20px;
 }
 
-.btn-sidebar {
+.sidebar {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.btn-perfil {
+.btn-sidebar {
   text-align: center;
   color: #ffff;
   font-size: 15px;
@@ -122,13 +122,13 @@ nav {
   padding: 6px 12px;
 }
 
-.btn-perfil:hover {
+.btn-sidebar:hover {
   color: #ffff;
   background-color: #ff4c6d;
   border: 1px solid #ff4c6d;
 }
 
-.btn-perfil:active {
+.btn-sidebar:active {
   color: #ffff;
   border: 1px solid #ff4c6d;
   background-color: #ff4c6d;
@@ -154,7 +154,7 @@ footer p {
   text-align: center;
 }
 
-.contato {
+.contact {
   display: flex;
   gap: 10px;
 }
