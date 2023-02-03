@@ -15,6 +15,11 @@
             toggleCompleted() {
                 this.yourBooksOpen = !this.yourBooksOpen
                 this.completed = !this.completed
+            },
+
+            saveBook() {
+                this.addBooks = !this.addBooks
+                this.yourBooksOpen = !this.yourBooksOpen
             }
         },
     }
@@ -64,7 +69,7 @@
         </div>
         <div class="btn">
             <button class="btn-primary btn-add" v-on:click="toggleAddBooks()">Voltar</button>
-            <button class="btn-primary btn-add" v-on:click="toggleAddBooks()">Salvar</button>
+            <button class="btn-primary btn-add" v-on:click="saveBook()">Salvar</button>
         </div>
     </div>
     <div class="completed" :class="{hidden: completed}">
