@@ -4,11 +4,11 @@
 
 <template>
   <main>
-    <div class="opcoes">
+    <div class="options">
       <img src="../../public/img/icone-add-pag.webp" alt="Páginas de livro" width="56" height="41">
       <RouterLink class="btn-main" to="/add-paginas">Adicionar página</RouterLink>
     </div>
-    <div class="opcoes">
+    <div class="options">
       <img src="../../public/img/icone-concluir-livros.webp" alt="Livro concluído" width="42" height="61">
       <RouterLink class="btn-main" to="/concluir-livros">Concluir livro</RouterLink>
     </div>
@@ -25,7 +25,7 @@
     gap: 60px;
   }
 
-  .opcoes {
+  .options {
     display: flex;
     flex-direction: column;
     align-items: center;

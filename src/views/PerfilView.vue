@@ -2,8 +2,8 @@
     import profileImage from '../assets/profile-img.webp'
     export default {
         data: () => ({
-            nome:"Usuário",
-            addNome:"",
+            name:"Usuário",
+            userName:"",
             image: profileImage
         }),
 
@@ -12,9 +12,9 @@
                 this.image = URL.createObjectURL(event.target.files[0]);
             },
 
-            addName() {
-                this.nome = this.addNome
-                this.addNome = ""
+            saveProfile() {
+                this.name = this.userName
+                this.userName = ""
             }
             
         }
@@ -22,24 +22,24 @@
 </script>
 
 <template>
-    <div class="perfil">
-        <div class="usuario">
-            <div class="add-foto">
+    <div class="profile">
+        <div class="user">
+            <div class="add-photo">
                 <label for="avatar"><img :src="image" alt="Foto do usuário" width="100" height="100" /></label>
                 <input type="file" id="avatar" name="avatar" accept="image/.png, image/.jpeg" @change="previewFiles" />
-                <span>{{nome}}</span>
+                <span>{{name}}</span>
             </div>
             <div>
-                <input v-model="addNome" name="name" type="text" placeholder="Digite seu nome...">
+                <input v-model="userName" name="name" type="text" placeholder="Digite seu nome...">
             </div>
         </div>
-        <button v-on:click="addName()">Salvar</button>
+        <button v-on:click="saveProfile()">Salvar</button>
     </div>
 </template>
 
 <style scoped>
 
-    .perfil {
+    .profile {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -48,7 +48,7 @@
         padding: 2rem 4rem;
     }
 
-    .usuario {
+    .user {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -56,7 +56,7 @@
         gap: 25px;
     }
 
-    .add-foto {
+    .add-photo {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -64,7 +64,7 @@
         gap: 10px;
     }
 
-    .add-foto label {
+    .add-photo label {
         font-size: 15px;
         background-color: transparent;
         color: #00c2cb;
@@ -72,7 +72,7 @@
         cursor: pointer;
     }
 
-    .add-foto img {
+    .add-photo img {
         border-radius: 100%;
     }
 
@@ -80,7 +80,7 @@
         display: none;
     }
 
-    .add-foto span {
+    .add-photo span {
         font-size: 20px;
         font-weight: 700;
     }

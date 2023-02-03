@@ -110,7 +110,7 @@
         filter: invert(100%);
     }
 
-    input[type="date"]:focus-visible{
+    input[type="date"]:focus-visible {
         outline: 1px solid #ff4c6d;
     }
 
