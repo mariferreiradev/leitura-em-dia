@@ -1,43 +1,43 @@
 <script>
     export default {
         data: () => ({
-            addLivros: true,
-            concluidos: true,
-            seusLivrosOpen: false,
+            addBooks: true,
+            completed: true,
+            yourBooksOpen: false,
         }),
 
         methods: {
-            toggleAddLivros() {
-                this.seusLivrosOpen = !this.seusLivrosOpen
-                this.addLivros = !this.addLivros
+            toggleAddBooks() {
+                this.yourBooksOpen = !this.yourBooksOpen
+                this.addBooks = !this.addBooks
             },
 
-            toggleConcluidos() {
-                this.seusLivrosOpen = !this.seusLivrosOpen
-                this.concluidos = !this.concluidos
+            toggleCompleted() {
+                this.yourBooksOpen = !this.yourBooksOpen
+                this.completed = !this.completed
             }
         },
     }
 </script>
 
 <template>
-    <div class="seus-livros" :class="{hidden: seusLivrosOpen}">
+    <div class="your-books" :class="{hidden: yourBooksOpen}">
         <h1>Livros</h1>
-        <div class="pesquisa">
-            <div class="buscar">
+        <div class="search-options">
+            <div class="search">
                 <input type="text" placeholder="Buscar por..." />
                 <img src="../../public/img/lupa.webp" alt="Buscar" width="24" height="24">
             </div>
-            <img class="filtro" src="../../public/img/filtro.webp" alt="Filtrar" width="24" height="24">
+            <img class="filter" src="../../public/img/filtro.webp" alt="Filtrar" width="24" height="24">
         </div>
-        <div class="livros">
-            <div class="livro" v-on:click="toggleConcluidos()">
+        <div class="books">
+            <div class="book" v-on:click="toggleCompleted()">
                 <p>Cracking the Coding Interview</p>
                 <div>
                     <span><img src="../../public/img/lendo.png" alt="Lendo" width="25" height="25"></span>
                 </div>
             </div>
-            <div class="livro" v-on:click="toggleConcluidos()">
+            <div class="book" v-on:click="toggleCompleted()">
                 <p>Clean Code</p>
                 <div>
                     <span><img src="../../public/img/concluido.png" alt="Concluído" width="25" height="25"></span>
@@ -45,58 +45,58 @@
             </div>
         </div>
         <div class="btn">
-            <button class="btn-add" v-on:click="toggleAddLivros()">Adicionar livro</button>
+            <button class="btn-add" v-on:click="toggleAddBooks()">Adicionar livro</button>
         </div>
     </div>
-    <div class="add-livros" :class="{hidden: addLivros}">
+    <div class="add-books" :class="{hidden: addBooks}">
         <h1>Adicionar livros</h1>
-        <div class="nome-livro">
+        <div class="name-book">
             <label for="">Digite o nome do livro:</label>
             <input type="text">
         </div>
-        <div class="nome-autor">
+        <div class="name-author">
             <label for="">Digite o nome do autor:</label>
             <input type="text">
         </div>
-        <div class="n-paginas">
+        <div class="number-pages">
             <label for="">Digite o número de páginas:</label>
             <input type="number">
         </div>
         <div class="btn">
-            <button class="btn-primary btn-add" v-on:click="toggleAddLivros()">Voltar</button>
-            <button class="btn-primary btn-add" v-on:click="toggleAddLivros()">Salvar</button>
+            <button class="btn-primary btn-add" v-on:click="toggleAddBooks()">Voltar</button>
+            <button class="btn-primary btn-add" v-on:click="toggleAddBooks()">Salvar</button>
         </div>
     </div>
-    <div class="concluidos" :class="{hidden: concluidos}">
+    <div class="completed" :class="{hidden: completed}">
         <h1>A Cabana</h1>
-        <div class="dados">
-            <div class="bloco">
+        <div class="data-book">
+            <div class="data">
                 <img src="..//../public/img/autores.webp" alt="Autor" width="35" height="35">
                 <span>Augusto Cury</span>
             </div>
-            <div class="bloco">
+            <div class="data">
                 <img src="..//../public/img/paginas-lidas.webp" alt="Páginas" width="35" height="35">
                 <span>126 páginas</span>
             </div>
         </div>
-        <div class="dados">
-            <div class="bloco">
+        <div class="data-book">
+            <div class="data">
                 <img src="..//../public/img/tempo.webp" alt="Tempo de leitura" width="35" height="35">
                 <span>Leitura em 01 dia</span>
             </div>
-            <div class="bloco">
+            <div class="data">
                 <img src="..//../public/img/estrela-nota.webp" alt="Nota" width="36" height="36">
                 <span>Avaliação 4.8</span>
             </div>
         </div>
-        <div class="resenha">
+        <div class="review">
             <h3>Resenha:</h3>
             <div>
                 <p>Resenha do livro...</p>
             </div>
         </div>
         <div class="btn">
-            <button class="btn-primary btn-add" v-on:click="toggleConcluidos()">Voltar</button>
+            <button class="btn-primary btn-add" v-on:click="toggleCompleted()">Voltar</button>
         </div>
     </div>
 </template>
@@ -108,22 +108,22 @@
         text-align: center;
         margin-bottom: 15px;
     }
-    .seus-livros {
+    .your-books {
         display: flex;
         flex-direction: column;
         gap: 40px;
         padding: 2rem;
     }
-    .pesquisa {
+    .search-options {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 20px;
     }
-    .buscar {
+    .search {
         position: relative;
     }
-    .buscar img {
+    .search img {
         position: absolute;
         top: 6px;
         right: 12px;
@@ -147,10 +147,10 @@
     input[type="text"]::placeholder {
         color: #00c2cb;
     }
-    .filtro {
+    .filter {
         cursor: pointer;
     }
-    .livros {
+    .books {
         color: #0f77ff;
         display: flex;
         flex-direction: column;
@@ -158,7 +158,7 @@
         align-items: flex-start;
         gap: 10px;
     }
-    .livro {
+    .book {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -166,7 +166,7 @@
         font-size: 14px;
         cursor: pointer;
     }
-    .livro span {
+    .book span {
         color: #ff4c6d;
         font-weight: 600;
     }
@@ -196,7 +196,7 @@
     }
 
 
-    .add-livros {
+    .add-books {
         padding: 2rem;
         display: flex;
         flex-direction: column;
@@ -205,7 +205,7 @@
         gap: 30px;
     }
 
-    .nome-livro, .nome-autor, .n-paginas {
+    .name-book, .name-author, .number-pages {
         font-size: 15px;
         display: flex;
         flex-direction: column;
@@ -214,7 +214,7 @@
         gap: 10px;
     }
 
-    .nome-livro input, .nome-autor input{
+    .name-book input, .name-author input{
         width: 150px;
         font-size: 15px;
         color: #0f77ff;
@@ -244,7 +244,7 @@
         margin: 0;
     }
 
-    .concluidos {
+    .completed {
         padding: 2rem;
         display: flex;
         flex-direction: column;
@@ -253,7 +253,7 @@
         gap: 30px;
     }
 
-    .dados {
+    .data-book {
         text-align: center;
         font-size: 15px;
         display: flex;
@@ -263,7 +263,7 @@
         gap: 10px;
     }
 
-    .bloco {
+    .data {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -273,7 +273,7 @@
         gap: 8px;
     }
 
-    .resenha {
+    .review {
         width: 100%;
         display: flex;
         flex-direction: column;
