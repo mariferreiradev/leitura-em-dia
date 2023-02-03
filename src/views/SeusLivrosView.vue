@@ -4,6 +4,7 @@
             addBooks: true,
             completed: true,
             yourBooksOpen: false,
+            alert: true
         }),
 
         methods: {
@@ -12,15 +13,17 @@
                 this.addBooks = !this.addBooks
             },
 
+            saveBook() {
+                this.addBooks = !this.addBooks
+                this.yourBooksOpen = !this.yourBooksOpen
+                this.alert = !this.alert
+                setTimeout(() => this.alert = true, 2000);
+            },
+
             toggleCompleted() {
                 this.yourBooksOpen = !this.yourBooksOpen
                 this.completed = !this.completed
             },
-
-            saveBook() {
-                this.addBooks = !this.addBooks
-                this.yourBooksOpen = !this.yourBooksOpen
-            }
         },
     }
 </script>
@@ -49,8 +52,9 @@
                 </div>
             </div>
         </div>
+        <span :class="{hidden: alert}">Livro adicionado!</span>
         <div class="btn">
-            <button class="btn-add" v-on:click="toggleAddBooks()">Adicionar livro</button>
+            <button class="btn-primary" v-on:click="toggleAddBooks()">Adicionar livro</button>
         </div>
     </div>
     <div class="add-books" :class="{hidden: addBooks}">
@@ -68,8 +72,8 @@
             <input type="number">
         </div>
         <div class="btn">
-            <button class="btn-primary btn-add" v-on:click="toggleAddBooks()">Voltar</button>
-            <button class="btn-primary btn-add" v-on:click="saveBook()">Salvar</button>
+            <button class="btn-small btn-primary" v-on:click="toggleAddBooks()">Voltar</button>
+            <button class="btn-small btn-primary" v-on:click="saveBook()">Salvar</button>
         </div>
     </div>
     <div class="completed" :class="{hidden: completed}">
@@ -101,7 +105,7 @@
             </div>
         </div>
         <div class="btn">
-            <button class="btn-primary btn-add" v-on:click="toggleCompleted()">Voltar</button>
+            <button class="btn-small btn-primary" v-on:click="toggleCompleted()">Voltar</button>
         </div>
     </div>
 </template>
@@ -175,6 +179,14 @@
         color: #ff4c6d;
         font-weight: 600;
     }
+
+    span {
+        color: #ff4c6d;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .btn {
         display: flex;
         align-items: center;
@@ -182,10 +194,10 @@
         gap: 20px;
     }
 
-    .btn-primary {
+    .btn-small {
         width: 70px;
     }
-    .btn-add {
+    .btn-primary {
         font-size: 15px;
         background-color: #00c2cb;
         color: #ffff;
@@ -194,7 +206,7 @@
         padding: 8px 10px;
         cursor: pointer;
     }
-    .btn-add:hover {
+    .btn-primary:hover {
         background-color: #ff4c6d;
         border: 1px solid #ff4c6d;
         transition: 0.4s;
