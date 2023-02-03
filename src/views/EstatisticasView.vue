@@ -1,53 +1,53 @@
 <template>
-    <div class="page-estatisticas">
+    <div class="statistics-page">
         <h1>Estatísticas</h1> 
-        <div class="periodo">
+        <div class="period">
             <p>Escolha o período que deseja:</p>
-            <div class="data">
+            <div class="date">
                 <label for="">De:</label>
                 <input type="date">
             </div>
-            <div class="data">
+            <div class="date">
                 <label for="">Até:</label>
                 <input type="date">
             </div>
         </div>
-        <div class="estatisticas">
-            <div class="marcadores">
-                <div class="marcador">
+        <div class="statistics">
+            <div class="markers">
+                <div class="marker">
                     <div>
                         <img src="../../public/img/livros-lidos.webp"  width="50px" height="50px" alt="">
                     </div>
-                    <div class="dados">
+                    <div class="data">
                         <span>89</span>
                         <p>Livros lidos</p>
                     </div>
                 </div>
-                <div class="marcador">
+                <div class="marker">
                     <div>
                         <img src="../../public/img/tempo.webp"  width="50px" height="50px" alt="">
                     </div>
-                    <div class="dados">
+                    <div class="data">
                         <span>148</span>
                         <p>Horas lidas</p>
                     </div>
                 </div>
             </div>
-            <div class="marcadores">
-                <div class="marcador">
+            <div class="markers">
+                <div class="marker">
                     <div>
                         <img src="../../public/img/paginas-lidas.webp" width="50px" height="50px" alt="">
                     </div>
-                    <div class="dados">
+                    <div class="data">
                         <span>1003</span>
                         <p>Páginas lidas</p>
                     </div>
                 </div>
-                <div class="marcador">
+                <div class="marker">
                     <div>
                         <img src="../../public/img/autores.webp" width="50px" height="50px" alt="">
                     </div>
-                    <div class="dados">
+                    <div class="data">
                         <p><span>12</span> livros de <span>Augusto Cury</span></p>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
 </template>
 
 <style scoped>
-    .page-estatisticas {
+    .statistics-page {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -72,7 +72,7 @@
         color: #ff4c6d;
         text-align: center;
     }
-    .periodo {
+    .period {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -81,17 +81,17 @@
         margin-bottom: 30px;
     }
 
-    .periodo p {
+    .period p {
         font-size: 16px;
         margin-bottom: 10px;
     }
-    .data {
+    .date {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 5px;
     }
-    .data label {
+    .date label {
         font-size: 15px;
         color: #ff4c6d;
     }
@@ -114,13 +114,13 @@
         outline: 1px solid #ff4c6d;
     }
 
-    .estatisticas {
+    .statistics {
         display: flex;
         flex-direction: column;
         gap: 25px;
     }
 
-    .marcadores {
+    .markers {
         font-size: 15px;
         display: flex;
         align-items: flex-start;
@@ -128,13 +128,13 @@
         gap: 25px;
     }
 
-    .marcador {
+    .marker {
         display: flex;
         flex-direction: column;
         gap: 8px;
     }
 
-    .dados {
+    .data {
         width: 100px;
     }
 </style>
