@@ -11,7 +11,7 @@
             },
 
             goBacktoHome() {
-            this.$router.push('/');
+                this.$router.push('/');
             }
         },
     }

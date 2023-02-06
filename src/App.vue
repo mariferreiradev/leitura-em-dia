@@ -16,7 +16,7 @@
 </script>
 
 <template>
-  <div class="content-app">
+  <div class="content-app" :class="{'disable-scroll': !sidebarOpen}">
     <header>
       <img :class="{hidden: homePage}" alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="75" />
       <div class="menu">
@@ -64,6 +64,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: scroll;
 }
 
 header {
@@ -167,6 +168,10 @@ nav a.router-link-exact-active {
 
 .hidden {
   display: none;
+}
+
+.disable-scroll {
+  overflow-y: hidden;
 }
 
 @media (min-width: 1024px) {
