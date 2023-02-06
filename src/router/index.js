@@ -5,6 +5,7 @@ import SeusLivrosView from '../views/SeusLivrosView.vue'
 import EstatisticasView from '../views/EstatisticasView.vue'
 import AddPaginasView from '../views/AddPaginasView.vue'
 import ConcluirLivrosView from '../views/ConcluirLivrosView.vue'
+import ListaDeDesejosView from '../views/ListaDeDesejosView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +44,12 @@ const router = createRouter({
       path:'/concluir-livros',
       name: 'concluir-livros',
       component: ConcluirLivrosView
+    },
+
+    {
+      path:'/lista-de-desejos',
+      name: 'lista-de-desejos',
+      component: ListaDeDesejosView
     }
   ]
 })
