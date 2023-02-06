@@ -9,8 +9,12 @@
       <RouterLink class="btn-main" to="/add-paginas">Adicionar página</RouterLink>
     </div>
     <div class="options">
-      <img src="../../public/img/icone-concluir-livros.webp" alt="Livro concluído" width="42" height="61">
+      <img src="../../public/img/concluir-livro.png" alt="Livro concluído" width="60" height="60">
       <RouterLink class="btn-main" to="/concluir-livros">Concluir livro</RouterLink>
+    </div>
+    <div class="options">
+      <img src="../../public/img/lista-de-desejos.png" alt="Lista de desejos" width="50" height="50">
+      <RouterLink class="btn-main" to="/lista-de-desejos">Lista de desejos</RouterLink>
     </div>
   </main>
 </template>
