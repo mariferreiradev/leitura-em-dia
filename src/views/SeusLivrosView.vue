@@ -24,6 +24,10 @@
                 this.yourBooksOpen = !this.yourBooksOpen
                 this.completed = !this.completed
             },
+
+            goBacktoHome() {
+                this.$router.push('/');
+            },
         },
     }
 </script>
@@ -54,6 +58,7 @@
         </div>
         <span :class="{hidden: alert}">Livro adicionado!</span>
         <div class="btn">
+            <button class="btn-primary" v-on:click="goBacktoHome()">Ir para Home</button>
             <button class="btn-primary" v-on:click="toggleAddBooks()">Adicionar livro</button>
         </div>
     </div>
@@ -198,6 +203,7 @@
         width: 70px;
     }
     .btn-primary {
+        width: 120px;
         font-size: 15px;
         background-color: #00c2cb;
         color: #ffff;
