@@ -43,7 +43,11 @@
             saveReview() {
                 this.completedBooks = !this.completedBooks
                 this.review = !this.review
-            }
+            },
+
+            goBacktoHome() {
+                this.$router.push('/');
+            },
         }
     }
 </script>
@@ -61,6 +65,7 @@
             <p>Pág: <span>33</span> / <span>105</span></p>
             <button class="btn-finish" v-on:click="concludeBook()">Concluir</button>
         </div>
+        <button class="btn-back" v-on:click="goBacktoHome()">Voltar</button>
     </div>
     <div class="evaluate">
         <div class="evaluation">
@@ -126,7 +131,7 @@
         padding: 20px;
     }
 
-    .btn-finish, .btn-save, .btn-choose button {
+    .btn-finish, .btn-save, .btn-back, .btn-choose button {
         width: 92px;
         font-size: 15px;
         color: #ffff;
@@ -137,12 +142,16 @@
         cursor: pointer;
     }
 
-    .btn-finish:hover, .btn-save:hover , .btn-choose button:hover {
+    .btn-finish:hover, .btn-save:hover, .btn-back:hover, .btn-choose button:hover {
         color: #ffff;
         border: 1px solid #ff4c6d;
         background-color: #ff4c6d;
         border-radius: 25px;
         transition: 0.4s;
+    }
+
+    .btn-back {
+        width: auto;
     }
 
     .btn-choose {
