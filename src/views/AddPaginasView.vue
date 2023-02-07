@@ -12,8 +12,8 @@
 
             goBacktoHome() {
                 this.$router.push('/');
-            }
-        },
+            },
+        }
     }
 </script>
 

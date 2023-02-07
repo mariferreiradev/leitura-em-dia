@@ -1,3 +1,13 @@
+<script>
+    export default {
+        methods: {
+            goBacktoHome() {
+                this.$router.push('/');
+            },
+        },
+    }
+</script>
+
 <template>
     <div class="wish-page">
         <h1>Lista de Desejos</h1>
@@ -16,7 +26,7 @@
                 <button class="btn-remove">Remover</button>
             </div>
         </div>
-
+        <button class="btn-primary btn-back" v-on:click="goBacktoHome()">Voltar</button>
     </div>
 </template>
 
@@ -86,6 +96,11 @@
         border: 1px solid #ff4c6d;
         background-color: #ff4c6d;
         cursor: pointer;
+    }
+
+    .btn-back {
+        font-size: 15px;
+        padding: 6px 12px;
     }
 
     input[type="text"] {
