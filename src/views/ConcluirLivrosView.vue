@@ -221,7 +221,7 @@
         font-size: 15px;
         color: #0f77ff;
         border: 1px solid #00c2cb;
-        border-radius: 25px;
+        border-radius: 8px;
         outline-color: #00c2cb;
         width: 225px;
         height: 300px;
