@@ -15,7 +15,11 @@
             saveProfile() {
                 this.name = this.userName
                 this.userName = ""
-            }
+            },
+
+            goBacktoHome() {
+                this.$router.push('/');
+            },
             
         }
     }
@@ -33,7 +37,10 @@
                 <input v-model="userName" name="name" type="text" placeholder="Digite seu nome...">
             </div>
         </div>
-        <button v-on:click="saveProfile()">Salvar</button>
+        <div class="btn">
+            <button v-on:click="saveProfile()">Salvar</button>
+            <button v-on:click="goBacktoHome()">Home</button>
+        </div>
     </div>
 </template>
 
@@ -102,7 +109,15 @@
         color: #00c2cb;
     }
 
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
     button {
+        width: 75px;
         font-size: 15px;
         background-color: #00c2cb;
         color: #ffff;
