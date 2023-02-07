@@ -10,7 +10,11 @@
       toggleSidebar() {
         this.sidebarOpen = !this.sidebarOpen
         this.homePage = !this.homePage
-      }
+      },
+
+      goBacktoHome() {
+        this.$router.push('/');
+      },
     }
   }
 </script>
@@ -18,7 +22,7 @@
 <template>
   <div class="content-app" :class="{'disable-scroll': !sidebarOpen}">
     <header>
-      <img :class="{hidden: homePage}" alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="75" />
+      <img :class="{hidden: homePage}" v-on:click="goBacktoHome()" alt="Logo leitura em dia" class="logo" src="./assets/logo-leitura-em-dia.webp" width="100" height="75" />
       <div class="menu">
         <img :class="{hidden: homePage}" v-on:click="toggleSidebar()" alt="Abrir menu" src="./assets/icone-sidebar-fechada.webp" width="50" height="50">
       </div>
