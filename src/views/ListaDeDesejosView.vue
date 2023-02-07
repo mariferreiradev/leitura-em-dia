@@ -2,8 +2,8 @@
     <div class="wish-page">
         <h1>Lista de Desejos</h1>
         <div class="add-wishes">
-            <input type="text" placeholder="Nome do livro...">
-            <button class="btn-primary">Adicionar</button>
+            <input type="text" placeholder="Digite o nome do livro...">
+            <button class="btn-primary">+</button>
         </div>
         <div class="wishlist">
             <div class="wishes">
@@ -58,12 +58,13 @@
     }
 
     .btn-primary {
-        font-size: 15px;
+        text-align: center;
+        font-size: 25px;
         color: #ffff;
         background-color: #00c2cb;
         border: 1px solid #00c2cb;
-        border-radius: 25px;
-        padding: 6px 12px;
+        border-radius: 30px;
+        padding: 1px 8px;
         cursor: pointer;
     }
 
@@ -94,7 +95,7 @@
         border-radius: 25px;
         outline-color: #00c2cb;
         padding: 8px 12px;
-        width: 125px;
+        width: 180px;
     }
 
     input[type="text"]:focus {
