@@ -82,6 +82,7 @@ header {
 
 .logo {
   display: block;
+  cursor: pointer;
 }
 
 aside {
