@@ -1,3 +1,13 @@
+<script>
+    export default {
+        methods: {
+            goBacktoHome() {
+                this.$router.push('/');
+            },
+        },
+    }
+</script>
+
 <template>
     <div class="statistics-page">
         <h1>Estatísticas</h1> 
@@ -52,7 +62,8 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
+        <button class="btn-back" v-on:click="goBacktoHome()">Ir para Home</button> 
     </div>
 </template>
 
@@ -135,5 +146,24 @@
 
     .data {
         width: 100px;
+    }
+
+    .btn-back {
+        margin-top: 10px;
+        font-size: 15px;
+        padding: 6px 12px;
+        color: #ffff;
+        background-color: #00c2cb;
+        border: 1px solid #00c2cb;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    .btn-back:hover {
+        color: #ffff;
+        border: 1px solid #ff4c6d;
+        background-color: #ff4c6d;
+        border-radius: 25px;
+        transition: 0.4s;
     }
 </style>
