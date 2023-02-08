@@ -1,9 +1,27 @@
 <script>
     export default {
+        data: () => ({
+            currentWishes: "",
+            wishlist: [
+                
+            ]
+        }),
+
         methods: {
             goBacktoHome() {
                 this.$router.push('/');
             },
+
+            addWishes() {
+                this.wishlist.push({
+                    text: this.currentWishes,
+                });
+                this.currentWishes = "";
+            },
+
+            removeWishes() {
+
+            }
         },
     }
 </script>
@@ -12,18 +30,13 @@
     <div class="wish-page">
         <h1>Lista de Desejos</h1>
         <div class="add-wishes">
-            <input type="text" placeholder="Digite o nome do livro...">
-            <button class="btn-primary">+</button>
+            <input type="text" v-model="currentWishes" placeholder="Digite o nome do livro...">
+            <button class="btn-primary" v-on:click="addWishes()">+</button>
         </div>
         <div class="wishlist">
-            <div class="wishes">
-                <p>Aprenda programação</p>
-                <button class="btn-remove">Remover</button>
-            </div>
-            <div class="wishes">
-                <p>Lógica de programação
-                </p>
-                <button class="btn-remove">Remover</button>
+            <div class="wishes" v-for="wishes in wishlist" :key="wishes.text">
+                <p>{{ wishes.text }}</p>
+                <button class="btn-remove" v-on:click="removeWishes()">Remover</button>
             </div>
         </div>
         <button class="btn-primary btn-back" v-on:click="goBacktoHome()">Voltar</button>
