@@ -19,8 +19,8 @@
                 this.currentWishes = "";
             },
 
-            removeWishes() {
-
+            removeWishes(wishes) {
+                this.wishlist = this.wishlist.filter(el => el.text !== wishes.text);
             }
         },
     }
@@ -36,7 +36,7 @@
         <div class="wishlist">
             <div class="wishes" v-for="wishes in wishlist" :key="wishes.text">
                 <p>{{ wishes.text }}</p>
-                <button class="btn-remove" v-on:click="removeWishes()">Remover</button>
+                <button class="btn-remove" v-on:click="removeWishes(wishes)">Remover</button>
             </div>
         </div>
         <button class="btn-primary btn-back" v-on:click="goBacktoHome()">Voltar</button>
