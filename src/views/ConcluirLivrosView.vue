@@ -230,7 +230,7 @@
         font-size: 15px;
         color: #0f77ff;
         border: 1px solid #00c2cb;
-        border-radius: 8px;
+        border-radius: 6px;
         outline-color: #00c2cb;
         width: 225px;
         height: 300px;
@@ -259,7 +259,7 @@
     ::-webkit-scrollbar-track-piece  {
         width: 6px;
         background-color: #e2f5f6;
-        -webkit-border-radius: 25px;
+        -webkit-border-radius: 30px;
     }
 
     ::-webkit-scrollbar-thumb:vertical {
