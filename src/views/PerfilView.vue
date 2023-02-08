@@ -2,8 +2,8 @@
     import profileImage from '../assets/profile-img.webp'
     export default {
         data: () => ({
-            name:"Usuário",
-            userName:"",
+            name: "Usuário",
+            userName: "",
             image: profileImage
         }),
 
@@ -13,8 +13,7 @@
             },
 
             saveProfile() {
-                this.name = this.userName
-                this.userName = ""
+                this.name = this.userName;
             },
 
             goBacktoHome() {
