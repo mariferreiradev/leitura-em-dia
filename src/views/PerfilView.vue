@@ -13,7 +13,12 @@
             },
 
             saveProfile() {
-                this.name = this.userName;
+                if(this.userName === "") {
+                    
+                } else {
+                    this.name = this.userName;
+                    this.userName = ""
+                }
             },
 
             goBacktoHome() {
