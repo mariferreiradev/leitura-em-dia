@@ -42,8 +42,8 @@
             </div>
         </div>
         <div class="btn">
-            <button v-on:click="saveProfile()">Salvar</button>
             <button v-on:click="goBacktoHome()">Home</button>
+            <button v-on:click="saveProfile()">Salvar</button>
         </div>
     </div>
 </template>
