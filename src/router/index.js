@@ -6,6 +6,7 @@ import EstatisticasView from '../views/EstatisticasView.vue'
 import AddPaginasView from '../views/AddPaginasView.vue'
 import ConcluirLivrosView from '../views/ConcluirLivrosView.vue'
 import ListaDeDesejosView from '../views/ListaDeDesejosView.vue'
+import AddLivrosView from '../views/AddLivrosView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,12 @@ const router = createRouter({
       path:'/lista-de-desejos',
       name: 'lista-de-desejos',
       component: ListaDeDesejosView
+    },
+
+    {
+      path:'/add-livros',
+      name:'add-livro',
+      component: AddLivrosView
     }
   ]
 })

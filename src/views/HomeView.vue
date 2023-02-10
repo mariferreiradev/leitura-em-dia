@@ -5,12 +5,16 @@
 <template>
   <main>
     <div class="options">
+      <img src="../../public/img/add-livro.webp" alt="Lista de desejos" width="49" height="49">
+      <RouterLink class="btn-main" to="/add-livros">Adicionar Livros</RouterLink>
+    </div>
+    <div class="options">
       <img src="../../public/img/icone-add-pag.webp" alt="Páginas de livro" width="56" height="41">
-      <RouterLink class="btn-main" to="/add-paginas">Adicionar página</RouterLink>
+      <RouterLink class="btn-main" to="/add-paginas">Adicionar páginas</RouterLink>
     </div>
     <div class="options">
       <img src="../../public/img/concluir-livro.png" alt="Livro concluído" width="60" height="60">
-      <RouterLink class="btn-main" to="/concluir-livros">Concluir livro</RouterLink>
+      <RouterLink class="btn-main" to="/concluir-livros">Concluir livros</RouterLink>
     </div>
     <div class="options">
       <img src="../../public/img/lista-de-desejos.png" alt="Lista de desejos" width="50" height="50">
