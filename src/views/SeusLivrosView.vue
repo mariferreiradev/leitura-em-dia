@@ -31,9 +31,11 @@ export default {
             this.alert = !this.alert
             setTimeout(() => this.alert = true, 3000);
         },
-        toggleCompleted() {
-            this.yourBooksOpen = !this.yourBooksOpen
-            this.completed = !this.completed
+        toggleBookDetails(isBookCompleted) {
+            if (isBookCompleted) {
+                this.yourBooksOpen = !this.yourBooksOpen
+                this.completed = !this.completed
+            }
         },
         goBacktoHome() {
             this.$router.push('/');
@@ -53,10 +55,12 @@ export default {
             <img class="filter" src="../../public/img/filtro.webp" alt="Filtrar" width="24" height="24">
         </div>
         <div class="books">
-            <div v-for="book in books" :key="book.title" class="book" v-on:click="toggleCompleted()">
+            <div v-for="book in books" :key="book.title" class="book" :class="{ 'book-disabled': !book.completed }"
+                v-on:click="toggleBookDetails(book.completed)">
                 <p>{{ book.title }}</p>
                 <div>
-                    <span><img :src="`../../public/img/${book.completed ? 'concluido.png' : 'lendo.png'}`" alt="Lendo" width="25" height="25"></span>
+                    <span><img :src="`../../public/img/${book.completed ? 'concluido.png' : 'lendo.png'}`" alt="Lendo"
+                            width="25" height="25"></span>
                 </div>
             </div>
         </div>
@@ -114,7 +118,7 @@ export default {
             </div>
         </div>
         <div class="btn">
-            <button class="btn-small btn-primary" v-on:click="toggleCompleted()">Voltar</button>
+            <button class="btn-small btn-primary" v-on:click="toggleBookDetails(true)">Voltar</button>
         </div>
     </div>
 </template>
@@ -195,6 +199,11 @@ input[type="text"]::placeholder {
 .book span {
     color: #ff4c6d;
     font-weight: 600;
+}
+
+.book-disabled {
+    cursor: default;
+    color: #00c2cb;
 }
 
 span {
