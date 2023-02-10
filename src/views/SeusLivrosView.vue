@@ -1,10 +1,8 @@
 <script>
 export default {
     data: () => ({
-        addBooks: true,
         completed: true,
         yourBooksOpen: false,
-        alert: true,
         books: [
             {
                 title: 'Cracking the Coding Interview',
@@ -21,16 +19,6 @@ export default {
         ]
     }),
     methods: {
-        toggleAddBooks() {
-            this.yourBooksOpen = !this.yourBooksOpen
-            this.addBooks = !this.addBooks
-        },
-        saveBook() {
-            this.addBooks = !this.addBooks
-            this.yourBooksOpen = !this.yourBooksOpen
-            this.alert = !this.alert
-            setTimeout(() => this.alert = true, 3000);
-        },
         toggleBookDetails(isBookCompleted) {
             if (isBookCompleted) {
                 this.yourBooksOpen = !this.yourBooksOpen
@@ -64,29 +52,8 @@ export default {
                 </div>
             </div>
         </div>
-        <span :class="{ hidden: alert }">Livro adicionado!</span>
         <div class="btn">
             <button class="btn-primary" v-on:click="goBacktoHome()">Ir para Home</button>
-            <button class="btn-primary" v-on:click="toggleAddBooks()">Adicionar livro</button>
-        </div>
-    </div>
-    <div class="add-books" :class="{ hidden: addBooks }">
-        <h1>Adicionar livros</h1>
-        <div class="name-book">
-            <label for="">Digite o nome do livro:</label>
-            <input type="text">
-        </div>
-        <div class="name-author">
-            <label for="">Digite o nome do autor:</label>
-            <input type="text">
-        </div>
-        <div class="number-pages">
-            <label for="">Digite o número de páginas:</label>
-            <input type="number">
-        </div>
-        <div class="btn">
-            <button class="btn-small btn-primary" v-on:click="toggleAddBooks()">Voltar</button>
-            <button class="btn-small btn-primary" v-on:click="saveBook()">Salvar</button>
         </div>
     </div>
     <div class="completed" :class="{ hidden: completed }">
@@ -206,14 +173,6 @@ input[type="text"]::placeholder {
     color: #00c2cb;
 }
 
-span {
-    color: #ff4c6d;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .btn {
     display: flex;
     align-items: center;
@@ -241,58 +200,6 @@ span {
     border: 1px solid #ff4c6d;
     transition: 0.4s;
 }
-
-.add-books {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-
-.name-book,
-.name-author,
-.number-pages {
-    font-size: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.name-book input,
-.name-author input {
-    width: 150px;
-    font-size: 15px;
-    color: #0f77ff;
-    border: 1px solid #ff4c6d;
-    border-radius: 25px;
-    padding: 8px 10px;
-    outline-color: #ff4c6d;
-}
-
-input[type="number"] {
-    width: 150px;
-    font-size: 15px;
-    color: #0f77ff;
-    border: 1px solid #ff4c6d;
-    border-radius: 25px;
-    padding: 8px 10px;
-    outline-color: #ff4c6d;
-}
-
-input[type="number"]:focus {
-    border: 2px solid #ff4c6d;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 .completed {
     padding: 2rem;
     display: flex;
