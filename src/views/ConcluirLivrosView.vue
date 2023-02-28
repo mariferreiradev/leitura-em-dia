@@ -22,12 +22,10 @@
                 this.addGrade = !this.addGrade
             },
 
-            backToCompletedBooks() {
-                this.completedBooks = false
+            notEvaluate() {
                 this.addEvaluation = true
                 this.addGrade = true
-                this.addReview = true
-                this.review = true
+                this.addReview = false
             },
 
             saveEvaluation() {
@@ -73,7 +71,7 @@
                 <p>Deseja avaliar esse livro?</p>
                 <div class="btn-choose">
                     <button v-on:click="toggleEvaluationBook()">Sim</button>
-                    <button v-on:click="backToCompletedBooks()">Não</button>
+                    <button v-on:click="notEvaluate()">Não</button>
                 </div>
             </div>
             <div class="grade" :class="{hidden: addGrade}">
