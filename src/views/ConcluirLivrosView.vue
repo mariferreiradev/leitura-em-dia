@@ -6,7 +6,9 @@
             addGrade: true,
             addReview: true,
             review: true,
-            alert: false
+            alert: false,
+            btnDelete: false,
+            btnConclude: true
         }),
 
         methods: {
@@ -39,10 +41,18 @@
                 this.review = !this.review
             },
 
+            notWriteReview() {
+                this.addReview = !this.addReview,
+                this.review = false,
+                this.saveReview()
+            },
+
             saveReview() {
                 this.completedBooks = !this.completedBooks
                 this.review = !this.review
                 this.alert = !this.alert
+                this.btnConclude = !this.btnConclude
+                this.btnDelete = !this.btnDelete
             },
 
             goBacktoHome() {
@@ -59,12 +69,8 @@
             <span>Logica de programação</span>
             <p>Pág: <span>33</span> / <span>105</span></p>
             <span class="alert" v-show="alert">Livro concluído</span>
-            <button class="btn-finish" v-on:click="concludeBook()">Concluir</button>
-        </div>
-        <div class="books">
-            <span>Logica de programação</span>
-            <p>Pág: <span>33</span> / <span>105</span></p>
-            <button class="btn-finish" v-on:click="concludeBook()">Concluir</button>
+            <button class="btn-finish" v-show="btnConclude" v-on:click="concludeBook()">Concluir</button>
+            <button class="btn-delete" v-show="btnDelete">Excluir</button>
         </div>
         <button class="btn-back" v-on:click="goBacktoHome()">Voltar</button>
     </div>
@@ -88,7 +94,7 @@
                 <p>Deseja escrever uma resenha sobre o livro?</p>
                 <div class="btn-choose">
                     <button v-on:click="toggleWriteReview()">Sim</button>
-                    <button v-on:click="saveReview()">Não</button>
+                    <button v-on:click="notWriteReview()">Não</button>
                 </div>
             </div>
             <div class="write-review" :class="{hidden: review}">
@@ -132,7 +138,7 @@
         padding: 20px;
     }
 
-    .btn-finish, .btn-save, .btn-back, .btn-choose button {
+    .btn-finish, .btn-delete, .btn-save, .btn-back, .btn-choose button {
         width: 92px;
         font-size: 15px;
         color: #ffff;
@@ -143,7 +149,7 @@
         cursor: pointer;
     }
 
-    .btn-finish:hover, .btn-save:hover, .btn-back:hover, .btn-choose button:hover {
+    .btn-finish:hover, .btn-delete:hover, .btn-save:hover, .btn-back:hover, .btn-choose button:hover {
         color: #ffff;
         border: 1px solid #ff4c6d;
         background-color: #ff4c6d;
