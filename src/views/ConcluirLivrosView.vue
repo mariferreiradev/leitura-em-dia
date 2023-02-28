@@ -5,7 +5,8 @@
             addEvaluation: true,
             addGrade: true,
             addReview: true,
-            review: true
+            review: true,
+            alert: false
         }),
 
         methods: {
@@ -41,6 +42,7 @@
             saveReview() {
                 this.completedBooks = !this.completedBooks
                 this.review = !this.review
+                this.alert = !this.alert
             },
 
             goBacktoHome() {
@@ -56,6 +58,7 @@
         <div class="books">
             <span>Logica de programação</span>
             <p>Pág: <span>33</span> / <span>105</span></p>
+            <span class="alert" v-show="alert">Livro concluído</span>
             <button class="btn-finish" v-on:click="concludeBook()">Concluir</button>
         </div>
         <div class="books">
@@ -85,7 +88,7 @@
                 <p>Deseja escrever uma resenha sobre o livro?</p>
                 <div class="btn-choose">
                     <button v-on:click="toggleWriteReview()">Sim</button>
-                    <button v-on:click="backToCompletedBooks()">Não</button>
+                    <button v-on:click="saveReview()">Não</button>
                 </div>
             </div>
             <div class="write-review" :class="{hidden: review}">
@@ -265,6 +268,10 @@
         background-color: #00c2cb;
         border: 3px solid #e2f5f6;
         -webkit-border-radius: 25px;
+    }
+    .alert {
+        color: #ff4c6d;
+        font-size: 12px;
     }
 
     .hidden {
