@@ -1,6 +1,8 @@
 <script>
     export default {
         data: () => ({
+            numberOfPages: 105,
+            pagesRead: 65,
             completedBooks: false,
             addEvaluation: true,
             addGrade: true,
@@ -53,6 +55,7 @@
                 this.alert = !this.alert
                 this.btnConclude = !this.btnConclude
                 this.btnDelete = !this.btnDelete
+                this.pagesRead = this.numberOfPages
             },
 
             goBacktoHome() {
@@ -67,7 +70,7 @@
         <h1>Concluir Livros</h1>
         <div class="books">
             <span>Logica de programação</span>
-            <p>Pág: <span>33</span> / <span>105</span></p>
+            <p>Pág: <span>{{pagesRead}}</span> / <span>{{numberOfPages}}</span></p>
             <span class="alert" v-show="alert">Livro concluído</span>
             <button class="btn-finish" v-show="btnConclude" v-on:click="concludeBook()">Concluir</button>
             <button class="btn-delete" v-show="btnDelete">Excluir</button>
