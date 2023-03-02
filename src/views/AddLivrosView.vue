@@ -2,10 +2,19 @@
     export default {
         data: () => ({
             alert: true,
+            bookName: '',
+            bookAuthor: '',
+            pagesBook: ''
         }),
 
         methods: {
             saveBook() {
+                const newBook = {
+                    bookName: this.bookName,
+                    bookAuthor: this.bookAuthor,
+                    pagesBook: this.pagesBook
+                }
+                localStorage.setItem('newBook' , JSON.stringify(newBook))
                 this.alert = !this.alert
                 setTimeout(() => this.alert = true, 3000);
             },
@@ -20,15 +29,15 @@
         <h1>Adicionar livros</h1>
         <div class="name-book">
             <label for="">Digite o nome do livro:</label>
-            <input type="text">
+            <input type="text" v-model="bookName">
         </div>
         <div class="name-author">
             <label for="">Digite o nome do autor:</label>
-            <input type="text">
+            <input type="text" v-model="bookAuthor">
         </div>
         <div class="number-pages">
             <label for="">Digite o número de páginas:</label>
-            <input type="number">
+            <input type="number" v-model="pagesBook">
         </div>
         <div class="btn">
             <button class="btn-small btn-primary" v-on:click="goBacktoHome()">Voltar</button>
