@@ -1,7 +1,8 @@
 <script>
     export default {
         data: () => ({
-            numberOfPages: 105,
+            bookName: null,
+            numberOfPages: null,
             pagesRead: 65,
             completedBooks: false,
             addEvaluation: true,
@@ -12,6 +13,12 @@
             btnDelete: false,
             btnConclude: true
         }),
+
+        mounted () {
+            const book = JSON.parse(localStorage.getItem('newBook'))
+            this.bookName = book.bookName
+            this.numberOfPages = book.pagesBook
+        },
 
         methods: {
             concludeBook() {
@@ -69,7 +76,7 @@
     <div class="completed-books" :class="{hidden: completedBooks}">
         <h1>Concluir Livros</h1>
         <div class="books">
-            <span>Logica de programação</span>
+            <span>{{bookName}}</span>
             <p>Pág: <span>{{pagesRead}}</span> / <span>{{numberOfPages}}</span></p>
             <span class="alert" v-show="alert">Livro concluído</span>
             <button class="btn-finish" v-show="btnConclude" v-on:click="concludeBook()">Concluir</button>
