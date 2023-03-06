@@ -1,8 +1,14 @@
 <script>
     export default {
         data: () => ({
-            alert: true
+            alert: true,
+            book: null
         }),
+
+        mounted () {
+            const book = JSON.parse(localStorage.getItem('newBook'))
+            this.book = book.bookName
+        },
 
         methods: {
             saveAlert() {
@@ -24,8 +30,7 @@
             <label for="">Escolha o livro:</label>
             <select name="" id="">
                 <option value="">Selecione</option>
-                <option value="">Livro 01</option>
-                <option value="">Livro 02</option>
+                <option value="">{{book}}</option>
             </select>
         </div>
         <div class="pages">

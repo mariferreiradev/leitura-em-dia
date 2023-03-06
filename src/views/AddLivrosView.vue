@@ -9,12 +9,15 @@
 
         methods: {
             saveBook() {
+                const books = JSON.parse(localStorage.getItem('books') || '[]')
                 const newBook = {
                     bookName: this.bookName,
                     bookAuthor: this.bookAuthor,
-                    pagesBook: this.pagesBook
+                    pagesBook: this.pagesBook,
+                    readingTime: 0
                 }
-                localStorage.setItem('newBook' , JSON.stringify(newBook))
+                books.push(newBook)
+                localStorage.setItem('books' , JSON.stringify(books))
                 this.alert = !this.alert
                 setTimeout(() => this.alert = true, 3000);
             },
