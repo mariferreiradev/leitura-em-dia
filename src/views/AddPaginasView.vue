@@ -6,8 +6,8 @@
         }),
 
         mounted () {
-            const book = JSON.parse(localStorage.getItem('newBook'))
-            this.book = book.bookName
+            const book = JSON.parse(localStorage.getItem('books'))
+            this.book = books.bookName
         },
 
         methods: {

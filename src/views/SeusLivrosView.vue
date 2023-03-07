@@ -3,21 +3,13 @@ export default {
     data: () => ({
         completed: true,
         yourBooksOpen: false,
-        books: [
-            {
-                title: 'Cracking the Coding Interview',
-                completed: false,
-                author: '',
-                numberOfPages: 100,
-            },
-            {
-                title: 'Clean Code',
-                completed: true,
-                author: '',
-                numberOfPages: 200,
-            },
-        ]
+        books: []
     }),
+
+    mounted () {
+        this.books = JSON.parse(localStorage.getItem('books') || '[]')   
+    },
+
     methods: {
         toggleBookDetails(isBookCompleted) {
             if (isBookCompleted) {
@@ -43,9 +35,9 @@ export default {
             <img class="filter" src="../../public/img/filtro.webp" alt="Filtrar" width="24" height="24">
         </div>
         <div class="books">
-            <div v-for="book in books" :key="book.title" class="book" :class="{ 'book-disabled': !book.completed }"
+            <div v-for="book in books" :key="book.bookName" class="book" :class="{ 'book-disabled': !book.completed }"
                 v-on:click="toggleBookDetails(book.completed)">
-                <p>{{ book.title }}</p>
+                <p>{{ book.bookName }}</p>
                 <div>
                     <span><img :src="`../../public/img/${book.completed ? 'concluido.png' : 'lendo.png'}`" alt="Lendo"
                             width="25" height="25"></span>
