@@ -2,12 +2,11 @@
     export default {
         data: () => ({
             alert: true,
-            book: null
+            books: []
         }),
 
         mounted () {
-            const book = JSON.parse(localStorage.getItem('books'))
-            this.book = books.bookName
+            this.books = JSON.parse(localStorage.getItem('books') || '[]')   
         },
 
         methods: {
@@ -30,7 +29,7 @@
             <label for="">Escolha o livro:</label>
             <select name="" id="">
                 <option value="">Selecione</option>
-                <option value="">{{book}}</option>
+                <option value="" v-for="book in books" :key="book.bookName">{{book.bookName}}</option>
             </select>
         </div>
         <div class="pages">
