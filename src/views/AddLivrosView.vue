@@ -14,6 +14,7 @@
                     bookName: this.bookName,
                     bookAuthor: this.bookAuthor,
                     pagesBook: this.pagesBook,
+                    pagesRead: 0,
                     readingTime: 0
                 }
                 books.push(newBook)
